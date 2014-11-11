@@ -20,6 +20,7 @@
 
         private const int VideoFirstIdGroupPosition = 4;
         private const int VideoFirstTitleGroupPosition = 6;
+        public int StartPosition = 1;
 
         private readonly RegexHelper RegexHelper;
 
@@ -85,13 +86,22 @@
             {
                 for (int i = 0; i < input.Count; i++)
                 {
-                    result.AppendLine(String.Format("Call ThunderAgent.AddTask(\"{0}\",\"{1}\",\"\",\"\",\"\",1,0,10)", input[i].DownloadUrl, (i + 1).ToString("000") + input[i].FileName));
+                    result.AppendLine(String.Format("Call ThunderAgent.AddTask(\"{0}\",\"{1}\",\"\",\"\",\"\",1,0,10)", input[i].DownloadUrl, (StartPosition + i).ToString("000") + input[i].FileName));
                 }
             }
 
             result.Append(ThunderCommitTask);
 
             return result.ToString();
+        }
+
+        public string Convert(string input)
+        {
+            var videoList = ParseTable(input);
+            videoList = RemoveInvalidCharacters(videoList);
+            string vbsString = GenerateThunderVbs(videoList);
+
+            return vbsString;
         }
     }
 }
