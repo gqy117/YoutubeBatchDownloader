@@ -22,14 +22,40 @@
         }
 
         [TestMethod]
+        public void ConvertTest()
+        {
+            // Arrange
+            #region expected
+            string expected;
+            using (StreamReader sr = new StreamReader("YoutubeTableHtmlParserTest\\GenerateThunderVbsTest.vbs"))
+            {
+                expected = sr.ReadToEnd();
+            }
+            #endregion
+            #region input
+            string input;
+            using (StreamReader sr = new StreamReader("YoutubeTableHtmlParserTest\\ParseTableTest.html"))
+            {
+                input = sr.ReadToEnd();
+            }
+            #endregion
+
+            // Act
+            string actual = this.YoutubeTableHtmlParser.Convert(input);
+
+            // Assert
+            actual.ShouldAllBeEquivalentTo(expected);
+        }
+
+        [TestMethod]
         public void ParseTableTest()
         {
             // Arrange
             #region expected
             IList<Video> expected = new List<Video>()
             {
-                new Video(){ Id = "nDS-56QYIb4", Title = "Starcraft 2: Toby Sucks at Gaming - Part 1"},
-                new Video(){ Id = "ElwN1KP0EZk", Title = "Starcraft 2: Toby Sucks at Gaming - Part 2"},
+                new Video(){ Id = "nDS-56QYIb4", Title = "Starcraft1"},
+                new Video(){ Id = "ElwN1KP0EZk", Title = "Starcraft2"},
             };
             #endregion
             #region input
