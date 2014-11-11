@@ -1,0 +1,61 @@
+﻿namespace YoutubeBatchDownloaderTest
+{
+    using System;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using YoutubeBatchDownloader.Service;
+    using FluentAssertions;
+
+    [TestClass]
+    public class RegexHelperTest
+    {
+        private RegexHelper RegexHelper { get; set; }
+
+        [TestInitialize]
+        public void Init()
+        {
+            RegexHelper = new RegexHelper();
+        }
+
+        [TestMethod]
+        public void ReplaceColonTest()
+        {
+            // Arrange
+            var expected = "data-video-id=\"gVTKR8JzX1E\" data-title=\"Starcraft 2 - Random Murloc Impression - Toby Sucks at Gaming - Part 6\"";
+            var input = "data-video-id=\"gVTKR8JzX1E\" data-title=\"Starcraft 2: - Random Murloc Impression - Toby Sucks at Gaming - Part 6\"";
+
+            // Act
+            string actual = this.RegexHelper.ReplaceColon(input);
+
+            // Assert
+            actual.ShouldBeEquivalentTo(expected);
+        }
+
+        [TestMethod]
+        public void ReplaceSingleQuotesTest()
+        {
+            // Arrange
+            var expected = "data-video-id=\"nSxuy1Op3bQ\" data-title=\"Starcraft 2 - Dont Let The Goose Burn - Toby Sucks at Gaming - Part 14\"";
+            var input = "data-video-id=\"nSxuy1Op3bQ\" data-title=\"Starcraft 2 - Don't Let The Goose Burn - Toby Sucks at Gaming - Part 14\"";
+
+            // Act
+            string actual = this.RegexHelper.ReplaceSingleQuotes(input);
+
+            // Assert
+            actual.ShouldBeEquivalentTo(expected);
+        }
+
+        [TestMethod]
+        public void ReplaceExclamatoryMarkTest()
+        {
+            // Arrange
+            var expected = "data-video-id=\"i1TdZhxp6hw\" data-title=\"Starcraft 2 - LAVA - Part 20 (Toby Sucks at Gaming)\"";
+            var input = "data-video-id=\"i1TdZhxp6hw\" data-title=\"Starcraft 2 - LAVA! - Part 20 (Toby Sucks at Gaming)\"";
+
+            // Act
+            string actual = this.RegexHelper.ReplaceExclamatoryMark(input);
+
+            // Assert
+            actual.ShouldBeEquivalentTo(expected);
+        }
+    }
+}
