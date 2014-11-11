@@ -15,30 +15,39 @@
     public class YoutubeTableHtmlParserTest
     {
         private YoutubeTableHtmlParser YoutubeTableHtmlParser { get; set; }
+        private string GenerateThunderVbsTestvbs { get; set; }
+        private string ParseTableTestHtml { get; set; }
+
         [TestInitialize]
         public void Init()
         {
             YoutubeTableHtmlParser = new YoutubeTableHtmlParser();
+            InitGenerateThunderVbsTestvbs();
+            InitParseTableTestHtml();
+        }
+
+        private void InitParseTableTestHtml()
+        {
+            using (StreamReader sr = new StreamReader("YoutubeTableHtmlParserTest\\ParseTableTest.html"))
+            {
+                ParseTableTestHtml = sr.ReadToEnd();
+            }
+        }
+
+        private void InitGenerateThunderVbsTestvbs()
+        {
+            using (StreamReader sr = new StreamReader("YoutubeTableHtmlParserTest\\GenerateThunderVbsTest.vbs"))
+            {
+                GenerateThunderVbsTestvbs = sr.ReadToEnd();
+            }
         }
 
         [TestMethod]
         public void ConvertTest()
         {
             // Arrange
-            #region expected
-            string expected;
-            using (StreamReader sr = new StreamReader("YoutubeTableHtmlParserTest\\GenerateThunderVbsTest.vbs"))
-            {
-                expected = sr.ReadToEnd();
-            }
-            #endregion
-            #region input
-            string input;
-            using (StreamReader sr = new StreamReader("YoutubeTableHtmlParserTest\\ParseTableTest.html"))
-            {
-                input = sr.ReadToEnd();
-            }
-            #endregion
+            string expected = GenerateThunderVbsTestvbs;
+            string input = ParseTableTestHtml;
 
             // Act
             string actual = this.YoutubeTableHtmlParser.Convert(input);
@@ -51,20 +60,13 @@
         public void ParseTableTest()
         {
             // Arrange
-            #region expected
             IList<Video> expected = new List<Video>()
             {
                 new Video(){ Id = "nDS-56QYIb4", Title = "Starcraft1"},
                 new Video(){ Id = "ElwN1KP0EZk", Title = "Starcraft2"},
             };
-            #endregion
-            #region input
-            string input;
-            using (StreamReader sr = new StreamReader("YoutubeTableHtmlParserTest\\ParseTableTest.html"))
-            {
-                input = sr.ReadToEnd();
-            }
-            #endregion
+
+            string input = ParseTableTestHtml;
 
             // Act
             IList<Video> actual = this.YoutubeTableHtmlParser.ParseTable(input);
@@ -101,11 +103,7 @@
         public void GenerateThunderVbsTest()
         {
             // Arrange
-            string expected;
-            using (StreamReader sr = new StreamReader("YoutubeTableHtmlParserTest\\GenerateThunderVbsTest.vbs"))
-            {
-                expected = sr.ReadToEnd();
-            }
+            string expected = GenerateThunderVbsTestvbs;
 
             // Act
             IList<Video> input = new List<Video>()
