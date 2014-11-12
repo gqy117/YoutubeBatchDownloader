@@ -55,9 +55,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="HtmlParserTestBase.cs" />
+    <Compile Include="ThunderVBSGeneratorTest.cs" />
     <Compile Include="RegexHelperTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="YoutubeTableHtmlParserTest\YoutubeTableHtmlParserTest.cs" />
+    <Compile Include="YoutubeTableHtmlParserTest\TableParserTest.cs" />
+    <Compile Include="YoutubeTableHtmlParserTest\YoutubeHtmlParserTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\YoutubeBatchDownloaderModel\YoutubeBatchDownloaderModel.csproj">

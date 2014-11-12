@@ -11,13 +11,12 @@
 
     public class YouTubeController : BaseController
     {
-        private readonly YoutubeTableHtmlParser YoutubeTableHtmlParser;
+        private readonly YoutubeHtmlParser YoutubeTableHtmlParser;
         private const string VbsFileName = "y.vbs";
-        private const string DownloadFileTextPlain = "text/plain";
 
         public YouTubeController()
         {
-            YoutubeTableHtmlParser = new YoutubeTableHtmlParser();
+            YoutubeTableHtmlParser = new YoutubeHtmlParser();
         }
 
         [HttpPost]
