@@ -7,7 +7,7 @@
     <ProjectGuid>{C95ED308-CBCC-49A1-886B-773EA6273747}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>YoutubeBatchDownloaderService</RootNamespace>
+    <RootNamespace>YoutubeBatchDownloader.Service</RootNamespace>
     <AssemblyName>YoutubeBatchDownloaderService</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -41,7 +41,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegexHelper.cs" />
-    <Compile Include="YoutubeTableHtmlParser.cs" />
+    <Compile Include="ThunderVBSGenerator.cs" />
+    <Compile Include="YoutubeHtmlParser\TableParser.cs" />
+    <Compile Include="YoutubeHtmlParser\YoutubeHtmlParser.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\YoutubeBatchDownloaderModel\YoutubeBatchDownloaderModel.csproj">

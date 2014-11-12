@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using YoutubeBatchDownloader.Model;
 
     public class RegexHelper
     {
@@ -24,12 +25,23 @@
 
         public string ReplaceExclamatoryMark(string input)
         {
-            return RemoveString(input,ExclamatoryMark);
+            return RemoveString(input, ExclamatoryMark);
         }
-        
+
         private string RemoveString(string input, string removedMark)
         {
             return input.Replace(removedMark, String.Empty);
+        }
+
+        public IList<Video> RemoveInvalidCharacters(IList<Video> input)
+        {
+            foreach (var video in input)
+            {
+                video.Title = ReplaceColon(video.Title);
+                video.Title = ReplaceExclamatoryMark(video.Title);
+                video.Title = ReplaceSingleQuotes(video.Title);
+            }
+            return input;
         }
     }
 }

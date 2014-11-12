@@ -40,6 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sequence\ISequence.cs" />
+    <Compile Include="Sequence\TitleFirstSequence.cs" />
+    <Compile Include="Sequence\VideoFirstSequence.cs" />
     <Compile Include="Video.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

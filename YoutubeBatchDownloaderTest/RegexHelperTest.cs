@@ -4,6 +4,8 @@
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using YoutubeBatchDownloader.Service;
     using FluentAssertions;
+    using YoutubeBatchDownloader.Model;
+    using System.Collections.Generic;
 
     [TestClass]
     public class RegexHelperTest
@@ -56,6 +58,30 @@
 
             // Assert
             actual.ShouldBeEquivalentTo(expected);
+        }
+
+        [TestMethod]
+        public void RemoveInvalidCharactersTest()
+        {
+            // Arrange
+            IList<Video> expected = new List<Video>()
+            {
+                new Video(){ Id = "nDS-56QYIb4", Title = "Starcraft1"},
+                new Video(){ Id = "ElwN1KP0EZk", Title = "Starcraft2"},
+                new Video(){ Id = "ElwN1KP0EZk", Title = "Starcraft3"},
+            };
+
+            // Act
+            IList<Video> input = new List<Video>()
+            {
+                new Video(){ Id = "nDS-56QYIb4", Title = ":Starcraft1"},
+                new Video(){ Id = "ElwN1KP0EZk", Title = "'Starcraft2"},
+                new Video(){ Id = "ElwN1KP0EZk", Title = "!Starcraft3"},
+            };
+            IList<Video> actual = this.RegexHelper.RemoveInvalidCharacters(input);
+
+            // Assert
+            actual.ShouldAllBeEquivalentTo(expected);
         }
     }
 }
