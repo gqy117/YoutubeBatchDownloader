@@ -10,17 +10,11 @@
 
     public class ThunderVBSGenerator
     {
-        private const string ThunderCreateObject = "Set ThunderAgent = CreateObject(\"ThunderAgent.Agent\")";
-        private const string ThunderAddTask = "Call ThunderAgent.AddTask(\"{0}\",\"{1}\",\"\",\"\",\"\",1,0,10)";
-        private const string ThunderCommitTask = "Call ThunderAgent.CommitTasks()";
-
-
-
         public string GenerateThunderVbs(IList<Video> input)
         {
-            ThunderVBSTemplate page = new ThunderVBSTemplate(input);
+            ThunderVBSTemplate vbsTemplate = new ThunderVBSTemplate(input);
 
-            return page.TransformText();
+            return vbsTemplate.TransformText();
         }
     }
 }
