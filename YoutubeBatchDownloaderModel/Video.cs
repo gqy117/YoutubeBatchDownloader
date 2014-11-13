@@ -28,5 +28,6 @@
                 return Title + DefaultExtension;
             }
         }
+        public string FileNameWithPrefix { get; set; }
     }
 }
