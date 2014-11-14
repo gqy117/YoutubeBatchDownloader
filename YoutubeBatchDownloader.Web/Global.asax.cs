@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace YoutubeBatchDownloaderWeb
+namespace YoutubeBatchDownloader.Web
 {
     public class MvcApplication : System.Web.HttpApplication
     {

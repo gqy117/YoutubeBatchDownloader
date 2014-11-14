@@ -6,8 +6,8 @@
     <ProjectGuid>{BBCE0DB3-5682-4A7D-9DF8-E58508F3E578}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>YoutubeBatchDownloaderTest</RootNamespace>
-    <AssemblyName>YoutubeBatchDownloaderTest</AssemblyName>
+    <RootNamespace>YoutubeBatchDownloader.Test</RootNamespace>
+    <AssemblyName>YoutubeBatchDownloader.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -65,11 +65,11 @@
     <Compile Include="YoutubeTableHtmlParserTest\YoutubeHtmlParserTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\YoutubeBatchDownloaderModel\YoutubeBatchDownloaderModel.csproj">
+    <ProjectReference Include="..\YoutubeBatchDownloader.Model\YoutubeBatchDownloader.Model.csproj">
       <Project>{3e228f82-58db-4e2b-ba6d-a560f9d4e20a}</Project>
       <Name>YoutubeBatchDownloaderModel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\YoutubeBatchDownloaderService\YoutubeBatchDownloaderService.csproj">
+    <ProjectReference Include="..\YoutubeBatchDownloader.Service\YoutubeBatchDownloader.Service.csproj">
       <Project>{c95ed308-cbcc-49a1-886b-773ea6273747}</Project>
       <Name>YoutubeBatchDownloaderService</Name>
     </ProjectReference>

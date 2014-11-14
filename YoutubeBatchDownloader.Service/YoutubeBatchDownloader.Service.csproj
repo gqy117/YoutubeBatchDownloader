@@ -53,7 +53,7 @@
     <Compile Include="YoutubeHtmlParser\YoutubeHtmlParser.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\YoutubeBatchDownloaderModel\YoutubeBatchDownloaderModel.csproj">
+    <ProjectReference Include="..\YoutubeBatchDownloader.Model\YoutubeBatchDownloader.Model.csproj">
       <Project>{3e228f82-58db-4e2b-ba6d-a560f9d4e20a}</Project>
       <Name>YoutubeBatchDownloaderModel</Name>
     </ProjectReference>

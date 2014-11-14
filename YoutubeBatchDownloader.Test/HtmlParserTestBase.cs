@@ -1,4 +1,4 @@
-﻿namespace YoutubeBatchDownloaderTest
+﻿namespace YoutubeBatchDownloader.Test
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;

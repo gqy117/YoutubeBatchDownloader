@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace YoutubeBatchDownloaderWeb
+namespace YoutubeBatchDownloader.Web
 {
     public class FilterConfig
     {

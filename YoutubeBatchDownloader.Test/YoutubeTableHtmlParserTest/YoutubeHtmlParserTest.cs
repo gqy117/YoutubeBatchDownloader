@@ -1,4 +1,4 @@
-﻿namespace YoutubeBatchDownloaderTest
+﻿namespace YoutubeBatchDownloader.Test
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
@@ -12,25 +12,21 @@
     using System.IO;
 
     [TestClass]
-    public class TableParserTest : HtmlParserTestBase
+    public class YoutubeHtmlParserTest : HtmlParserTestBase
     {
         [TestMethod]
-        public void ParseTableTest()
+        public void ConvertTest()
         {
             // Arrange
-            IList<Video> expected = new List<Video>()
-            {
-                new Video(){ Id = "nDS-56QYIb4", Title = "Starcraft1"},
-                new Video(){ Id = "ElwN1KP0EZk", Title = "Starcraft2"},
-            };
-
+            string expected = GenerateThunderVbsTestvbs;
             string input = ParseTableTestHtml;
 
             // Act
-            IList<Video> actual = this.TableParser.ParseTable(input);
+            string actual = this.YoutubeTableHtmlParser.Convert(input);
 
             // Assert
-            actual.ShouldBeEquivalentTo(expected);
+            actual.ShouldAllBeEquivalentTo(expected);
         }
+
     }
 }
