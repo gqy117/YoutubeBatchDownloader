@@ -1,4 +1,4 @@
-﻿namespace YoutubeBatchDownloaderWeb.Controllers
+﻿namespace YoutubeBatchDownloader.Web.Controllers
 {
     using System;
     using System.Collections.Generic;

@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>YoutubeBatchDownloaderWeb</RootNamespace>
-    <AssemblyName>YoutubeBatchDownloaderWeb</AssemblyName>
+    <RootNamespace>YoutubeBatchDownloader.Web</RootNamespace>
+    <AssemblyName>YoutubeBatchDownloader.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -177,11 +177,11 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\YoutubeBatchDownloaderModel\YoutubeBatchDownloaderModel.csproj">
+    <ProjectReference Include="..\YoutubeBatchDownloader.Model\YoutubeBatchDownloader.Model.csproj">
       <Project>{3e228f82-58db-4e2b-ba6d-a560f9d4e20a}</Project>
       <Name>YoutubeBatchDownloaderModel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\YoutubeBatchDownloaderService\YoutubeBatchDownloaderService.csproj">
+    <ProjectReference Include="..\YoutubeBatchDownloader.Service\YoutubeBatchDownloader.Service.csproj">
       <Project>{c95ed308-cbcc-49a1-886b-773ea6273747}</Project>
       <Name>YoutubeBatchDownloaderService</Name>
     </ProjectReference>

@@ -1,29 +1,33 @@
-﻿namespace YoutubeBatchDownloaderTest
+﻿namespace YoutubeBatchDownloader.Test
 {
-    using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
     using YoutubeBatchDownloader.Service;
     using FluentAssertions;
-    using System.IO;
-    using System.Collections.Generic;
     using YoutubeBatchDownloader.Model;
+    using System.IO;
 
     [TestClass]
-    public class ThunderVBSGeneratorTest : HtmlParserTestBase
+    public class TableParserTest : HtmlParserTestBase
     {
         [TestMethod]
-        public void GenerateThunderVbsTest()
+        public void ParseTableTest()
         {
             // Arrange
-            string expected = GenerateThunderVbsTestvbs;
-
-            // Act
-            IList<Video> input = new List<Video>()
+            IList<Video> expected = new List<Video>()
             {
                 new Video(){ Id = "nDS-56QYIb4", Title = "Starcraft1"},
                 new Video(){ Id = "ElwN1KP0EZk", Title = "Starcraft2"},
             };
-            string actual = this.ThunderVBSGenerator.GenerateThunderVbs(input);
+
+            string input = ParseTableTestHtml;
+
+            // Act
+            IList<Video> actual = this.TableParser.ParseTable(input);
 
             // Assert
             actual.ShouldBeEquivalentTo(expected);
