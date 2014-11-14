@@ -7,8 +7,8 @@
     <ProjectGuid>{3E228F82-58DB-4E2B-BA6D-A560F9D4E20A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>YoutubeBatchDownloaderModel</RootNamespace>
-    <AssemblyName>YoutubeBatchDownloaderModel</AssemblyName>
+    <RootNamespace>YoutubeBatchDownloader.Model</RootNamespace>
+    <AssemblyName>YoutubeBatchDownloader.Model</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
