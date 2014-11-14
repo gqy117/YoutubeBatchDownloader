@@ -56,10 +56,11 @@
   </Choose>
   <ItemGroup>
     <Compile Include="HtmlParserTestBase.cs" />
-    <Compile Include="ThunderVBS\ThunderVBSPartialTest.cs" />
     <Compile Include="ThunderVBS\ThunderVBSGeneratorTest.cs" />
     <Compile Include="RegexHelperTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThunderVBS\ThunderVBSPartialTest.cs" />
+    <Compile Include="Utility\FileReaderTest.cs" />
     <Compile Include="YoutubeTableHtmlParserTest\TableParserTest.cs" />
     <Compile Include="YoutubeTableHtmlParserTest\YoutubeHtmlParserTest.cs" />
   </ItemGroup>
@@ -78,6 +79,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Utility\FileReaderTest.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="YoutubeTableHtmlParserTest\GenerateThunderVbsTest.vbs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

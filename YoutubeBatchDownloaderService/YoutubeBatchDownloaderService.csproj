@@ -48,6 +48,7 @@
     </Compile>
     <Compile Include="ThunderVBS\ThunderVBSGenerator.cs" />
     <Compile Include="ThunderVBS\ThunderVBSPartial.cs" />
+    <Compile Include="Utility\FileReader.cs" />
     <Compile Include="YoutubeHtmlParser\TableParser.cs" />
     <Compile Include="YoutubeHtmlParser\YoutubeHtmlParser.cs" />
   </ItemGroup>

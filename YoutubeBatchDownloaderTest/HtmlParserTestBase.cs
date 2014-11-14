@@ -36,18 +36,12 @@
 
         protected virtual void InitParseTableTestHtml()
         {
-            using (StreamReader sr = new StreamReader(FileParseTableTest))
-            {
-                ParseTableTestHtml = sr.ReadToEnd();
-            }
+            ParseTableTestHtml = FileReader.ReadString(FileParseTableTest);
         }
 
         protected virtual void InitGenerateThunderVbsTestvbs()
         {
-            using (StreamReader sr = new StreamReader(FileGenerateThunderVbsTest))
-            {
-                GenerateThunderVbsTestvbs = sr.ReadToEnd();
-            }
+            GenerateThunderVbsTestvbs = FileReader.ReadString(FileGenerateThunderVbsTest);
         }
         #endregion
     }
