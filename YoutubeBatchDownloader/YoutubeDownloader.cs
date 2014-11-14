@@ -1,32 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using YoutubeBatchDownloader.Service;
-
-namespace YoutubeBatchDownloader
+﻿namespace YoutubeBatchDownloader
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Drawing;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows.Forms;
+    using YoutubeBatchDownloader.Service;
+
     public partial class YoutubeDownloader : Form
     {
-        private readonly YoutubeTableHtmlParser YoutubeTableHtmlParser;
+        private readonly YoutubeHtmlParser YoutubeHtmlParser;
         public YoutubeDownloader()
         {
             InitializeComponent();
-            this.YoutubeTableHtmlParser = new YoutubeTableHtmlParser();
+            this.YoutubeHtmlParser = new YoutubeHtmlParser();
         }
 
         private void buttonConvert_Click(object sender, EventArgs e)
         {
-            var videoList = YoutubeTableHtmlParser.ParseTable(textBoxInputHtml.Text);
-            videoList = YoutubeTableHtmlParser.RemoveInvalidCharacters(videoList);
-            string vbsString = YoutubeTableHtmlParser.GenerateThunderVbs(videoList);
-            textBoxOutput.Text = vbsString;
-            Clipboard.SetText(vbsString, TextDataFormat.Html);
+            textBoxOutput.Text = YoutubeHtmlParser.Convert(textBoxInputHtml.Text);
+            Clipboard.SetText(textBoxOutput.Text, TextDataFormat.Html);
         }
     }
 }

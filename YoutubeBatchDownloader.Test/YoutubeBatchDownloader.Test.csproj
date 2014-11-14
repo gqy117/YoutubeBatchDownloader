@@ -67,11 +67,11 @@
   <ItemGroup>
     <ProjectReference Include="..\YoutubeBatchDownloader.Model\YoutubeBatchDownloader.Model.csproj">
       <Project>{3e228f82-58db-4e2b-ba6d-a560f9d4e20a}</Project>
-      <Name>YoutubeBatchDownloaderModel</Name>
+      <Name>YoutubeBatchDownloader.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\YoutubeBatchDownloader.Service\YoutubeBatchDownloader.Service.csproj">
       <Project>{c95ed308-cbcc-49a1-886b-773ea6273747}</Project>
-      <Name>YoutubeBatchDownloaderService</Name>
+      <Name>YoutubeBatchDownloader.Service</Name>
     </ProjectReference>
     <ProjectReference Include="..\YoutubeBatchDownloader\YoutubeBatchDownloader.csproj">
       <Project>{a7aae2d4-4287-477e-b31e-f2c4f7248e19}</Project>
