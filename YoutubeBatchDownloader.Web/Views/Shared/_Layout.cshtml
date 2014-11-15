@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using System.Globalization
+@using LocalResource = YoutubeBatchDownloader.Web.Resources.Home;
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -16,11 +19,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("YouTube Html Downloader", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink(LocalResource.YouTubeHtmlDownloader, "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink(LocalResource.HomeTitle, "Index", "Home")</li>
                 </ul>
             </div>
         </div>
