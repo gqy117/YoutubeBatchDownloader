@@ -1,11 +1,11 @@
 ﻿namespace YoutubeBatchDownloader.Test
 {
     using System;
+    using System.Collections.Generic;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using YoutubeBatchDownloader.Service;
     using FluentAssertions;
     using YoutubeBatchDownloader.Model;
-    using System.Collections.Generic;
 
     [TestClass]
     public class RegexHelperTest
@@ -66,17 +66,17 @@
             // Arrange
             IList<Video> expected = new List<Video>()
             {
-                new Video(){ Id = "nDS-56QYIb4", Title = "Starcraft1"},
-                new Video(){ Id = "ElwN1KP0EZk", Title = "Starcraft2"},
-                new Video(){ Id = "ElwN1KP0EZk", Title = "Starcraft3"},
+                new Video() { Id = "nDS-56QYIb4", Title = "Starcraft1" },
+                new Video() { Id = "ElwN1KP0EZk", Title = "Starcraft2" },
+                new Video() { Id = "ElwN1KP0EZk", Title = "Starcraft3" },
             };
 
             // Act
             IList<Video> input = new List<Video>()
             {
-                new Video(){ Id = "nDS-56QYIb4", Title = ":Starcraft1"},
-                new Video(){ Id = "ElwN1KP0EZk", Title = "'Starcraft2"},
-                new Video(){ Id = "ElwN1KP0EZk", Title = "!Starcraft3"},
+                new Video() { Id = "nDS-56QYIb4", Title = ":Starcraft1" },
+                new Video() { Id = "ElwN1KP0EZk", Title = "'Starcraft2" },
+                new Video() { Id = "ElwN1KP0EZk", Title = "!Starcraft3" },
             };
             IList<Video> actual = this.RegexHelper.RemoveInvalidCharacters(input);
 

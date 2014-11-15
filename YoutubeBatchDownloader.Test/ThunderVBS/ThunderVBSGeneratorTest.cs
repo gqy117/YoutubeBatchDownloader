@@ -1,11 +1,11 @@
 ﻿namespace YoutubeBatchDownloader.Test
 {
     using System;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using YoutubeBatchDownloader.Service;
-    using FluentAssertions;
     using System.IO;
     using System.Collections.Generic;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using FluentAssertions;
+    using YoutubeBatchDownloader.Service;
     using YoutubeBatchDownloader.Model;
 
     [TestClass]
@@ -20,8 +20,8 @@
             // Act
             IList<Video> input = new List<Video>()
             {
-                new Video(){ Id = "nDS-56QYIb4", Title = "Starcraft1"},
-                new Video(){ Id = "ElwN1KP0EZk", Title = "Starcraft2"},
+                new Video() { Id = "nDS-56QYIb4", Title = "Starcraft1" },
+                new Video() { Id = "ElwN1KP0EZk", Title = "Starcraft2" },
             };
             string actual = this.ThunderVBSGenerator.GenerateThunderVbs(input);
 

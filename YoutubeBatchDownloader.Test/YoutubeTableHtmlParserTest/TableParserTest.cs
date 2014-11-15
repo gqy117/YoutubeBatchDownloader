@@ -1,15 +1,15 @@
 ﻿namespace YoutubeBatchDownloader.Test
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using YoutubeBatchDownloader.Model;
     using YoutubeBatchDownloader.Service;
     using FluentAssertions;
-    using YoutubeBatchDownloader.Model;
-    using System.IO;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
     public class TableParserTest : TestBase
@@ -20,8 +20,8 @@
             // Arrange
             IList<Video> expected = new List<Video>()
             {
-                new Video(){ Id = "nDS-56QYIb4", Title = "Starcraft1"},
-                new Video(){ Id = "ElwN1KP0EZk", Title = "Starcraft2"},
+                new Video() { Id = "nDS-56QYIb4", Title = "Starcraft1" },
+                new Video() { Id = "ElwN1KP0EZk", Title = "Starcraft2" },
             };
 
             string input = ParseTableTestHtml;
