@@ -12,7 +12,7 @@
     using System.IO;
 
     [TestClass]
-    public class YoutubeHtmlParserTest : HtmlParserTestBase
+    public class YoutubeHtmlParserTest : TestBase
     {
         [TestMethod]
         public void ConvertTest()

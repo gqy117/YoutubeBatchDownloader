@@ -12,7 +12,7 @@
     using System.IO;
 
     [TestClass]
-    public class TableParserTest : HtmlParserTestBase
+    public class TableParserTest : TestBase
     {
         [TestMethod]
         public void ParseTableTest()

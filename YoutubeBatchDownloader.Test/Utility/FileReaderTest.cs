@@ -8,7 +8,7 @@
     using System.Collections.Generic;
 
     [TestClass]
-    public class FileReaderTest
+    public class FileReaderTest : TestBase
     {
 
         [TestMethod]
