@@ -1,5 +1,6 @@
 ﻿namespace YoutubeBatchDownloader.Service
 {
+    using Microsoft.Practices.Unity;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -10,11 +11,17 @@
 
     public class ThunderVBSGenerator
     {
+        private ThunderVBSTemplate ThunderVBSTemplate { get; set; }
+
+        [InjectionMethod]
+        public void Init(ThunderVBSTemplate thunderVBSTemplate)
+        {
+            ThunderVBSTemplate = thunderVBSTemplate;
+        }
+
         public string GenerateThunderVbs(IList<Video> input)
         {
-            ThunderVBSTemplate vbsTemplate = new ThunderVBSTemplate(input);
-
-            return vbsTemplate.TransformText();
+            return ThunderVBSTemplate.TransformText(input);
         }
     }
 }

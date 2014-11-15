@@ -25,8 +25,7 @@
             };
 
             // Act
-            ThunderVBSTemplate vbsTemplate = new ThunderVBSTemplate(input);
-            string actual = vbsTemplate.TransformText();
+            string actual = ThunderVBSTemplate.TransformText(input);
 
             // Assert
             actual.ShouldBeEquivalentTo(expected);

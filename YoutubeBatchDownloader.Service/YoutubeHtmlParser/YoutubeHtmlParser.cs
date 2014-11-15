@@ -1,5 +1,6 @@
 ﻿namespace YoutubeBatchDownloader.Service
 {
+    using Microsoft.Practices.Unity;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -10,16 +11,19 @@
 
     public class YoutubeHtmlParser
     {
-        private readonly RegexHelper RegexHelper;
-        private readonly ThunderVBSGenerator ThunderVBSGenerator;
-        private readonly TableParser TableParser;
+        private RegexHelper RegexHelper;
+        private ThunderVBSGenerator ThunderVBSGenerator;
+        private TableParser TableParser;
 
-        public YoutubeHtmlParser()
+        #region Init
+        [InjectionMethod]
+        public void Init(RegexHelper regexHelper, ThunderVBSGenerator thunderVBSGenerator, TableParser tableParser)
         {
-            RegexHelper = new RegexHelper();
-            ThunderVBSGenerator = new ThunderVBSGenerator();
-            TableParser = new TableParser();
-        }
+            RegexHelper = regexHelper;
+            ThunderVBSGenerator = thunderVBSGenerator;
+            TableParser = tableParser;
+        } 
+        #endregion
 
         public string Convert(string input)
         {

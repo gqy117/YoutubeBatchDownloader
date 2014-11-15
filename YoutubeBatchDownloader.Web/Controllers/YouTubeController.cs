@@ -1,5 +1,6 @@
 ﻿namespace YoutubeBatchDownloader.Web.Controllers
 {
+    using Microsoft.Practices.Unity;
     using System;
     using System.Collections.Generic;
     using System.IO;
@@ -11,12 +12,13 @@
 
     public class YouTubeController : BaseController
     {
-        private readonly YoutubeHtmlParser YoutubeTableHtmlParser;
+        private YoutubeHtmlParser YoutubeTableHtmlParser { get; set; }
         private const string VbsFileName = "y.vbs";
 
-        public YouTubeController()
+        [InjectionMethod]
+        public void Init(YoutubeHtmlParser youtubeHtmlParser)
         {
-            YoutubeTableHtmlParser = new YoutubeHtmlParser();
+            YoutubeTableHtmlParser = youtubeHtmlParser;
         }
 
         [HttpPost]

@@ -1,5 +1,6 @@
 ﻿namespace YoutubeBatchDownloader.Test
 {
+    using Microsoft.Practices.Unity;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
     using System.Collections.Generic;
@@ -8,15 +9,19 @@
     using System.Text;
     using System.Threading.Tasks;
     using YoutubeBatchDownloader.Service;
+    using YoutubeBatchDownloader.Service.DI;
+    using YoutubeBatchDownloader.Service.ThunderVBS;
 
     [TestClass]
     [Ignore]
     public abstract class HtmlParserTestBase
     {
         #region Properties
+        protected IUnityContainer Container { get; set; }
         protected YoutubeHtmlParser YoutubeTableHtmlParser { get; set; }
         protected ThunderVBSGenerator ThunderVBSGenerator { get; set; }
         protected TableParser TableParser { get; set; }
+        protected ThunderVBSTemplate ThunderVBSTemplate { get; set; }
         protected string GenerateThunderVbsTestvbs { get; set; }
         protected string ParseTableTestHtml { get; set; }
         protected const string FileParseTableTest = "YoutubeTableHtmlParserTest\\ParseTableTest.html";
@@ -27,11 +32,24 @@
         [TestInitialize]
         public void Init()
         {
-            YoutubeTableHtmlParser = new YoutubeHtmlParser();
-            ThunderVBSGenerator = new ThunderVBSGenerator();
-            TableParser = new TableParser();
+            InitUnityContainer();
+            ResolveClasses();
             InitGenerateThunderVbsTestvbs();
             InitParseTableTestHtml();
+        }
+
+        protected virtual void ResolveClasses()
+        {
+            YoutubeTableHtmlParser = Container.Resolve<YoutubeHtmlParser>();
+            ThunderVBSGenerator = Container.Resolve<ThunderVBSGenerator>();
+            TableParser = Container.Resolve<TableParser>();
+            ThunderVBSTemplate = Container.Resolve<ThunderVBSTemplate>();
+        }
+
+        protected virtual void InitUnityContainer()
+        {
+            Container = new UnityContainer();
+            UnityRegister.RegisterTypes(Container);
         }
 
         protected virtual void InitParseTableTestHtml()
