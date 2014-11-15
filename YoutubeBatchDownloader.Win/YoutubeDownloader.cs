@@ -1,4 +1,4 @@
-﻿namespace YoutubeBatchDownloader
+﻿namespace YoutubeBatchDownloader.Win
 {
     using System;
     using System.Collections.Generic;

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30516.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeBatchDownloader", "YoutubeBatchDownloader\YoutubeBatchDownloader.csproj", "{A7AAE2D4-4287-477E-B31E-F2C4F7248E19}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeBatchDownloader.Win", "YoutubeBatchDownloader.Win\YoutubeBatchDownloader.Win.csproj", "{A7AAE2D4-4287-477E-B31E-F2C4F7248E19}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeBatchDownloader.Test", "YoutubeBatchDownloader.Test\YoutubeBatchDownloader.Test.csproj", "{BBCE0DB3-5682-4A7D-9DF8-E58508F3E578}"
 EndProject
