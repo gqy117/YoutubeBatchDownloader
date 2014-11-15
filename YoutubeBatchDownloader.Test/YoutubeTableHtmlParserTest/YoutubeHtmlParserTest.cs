@@ -1,7 +1,7 @@
 ﻿namespace YoutubeBatchDownloader.Test
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
+    using System.IO;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
@@ -9,7 +9,7 @@
     using YoutubeBatchDownloader.Service;
     using FluentAssertions;
     using YoutubeBatchDownloader.Model;
-    using System.IO;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
     public class YoutubeHtmlParserTest : TestBase
@@ -27,6 +27,5 @@
             // Assert
             actual.ShouldAllBeEquivalentTo(expected);
         }
-
     }
 }
