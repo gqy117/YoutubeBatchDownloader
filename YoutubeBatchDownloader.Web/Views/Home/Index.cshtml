@@ -1,17 +1,19 @@
-﻿@{
-    ViewBag.Title = "YouTube Html";
+﻿@using System.Globalization
+@using LocalResource = YoutubeBatchDownloader.Web.Resources.Home;
+@{
+    ViewBag.Title = LocalResource.YouTubeHtml;
 }
 
 <div class="jumbotron">
     <div>
         <form id="youTubeForm" action="@Url.Content("~/YouTube/Convert")" method="post">
-            <h2>YouTube Html</h2>
-            <p><textarea class="YouTubeHtml" name="youTubeHtml" placeholder="Paste your YouTube html here..."></textarea></p>
-            <p class="buttonGo"><a class="btn btn-primary btn-lg" id="buttonGo">Go!</a></p>
+            <h2>@LocalResource.YouTubeHtml</h2>
+            <p><textarea class="YouTubeHtml" name="youTubeHtml" placeholder="@LocalResource.PasteYourYouTubeHtmlHere"></textarea></p>
+            <p class="buttonGo"><a class="btn btn-primary btn-lg" id="buttonGo">@LocalResource.Go</a></p>
         </form>
     </div>
 </div>
 
 @section scripts{
-    <script src="@Url.Content("~/Scripts/Views/Index.js")" ></script>
+    <script src="@Url.Content("~/Scripts/Views/Index.js")"></script>
 }
