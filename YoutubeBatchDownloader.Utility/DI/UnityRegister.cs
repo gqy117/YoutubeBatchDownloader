@@ -1,4 +1,4 @@
-﻿namespace YoutubeBatchDownloader.Service.DI
+﻿namespace YoutubeBatchDownloader.Utility
 {
     using Microsoft.Practices.Unity;
     using System;

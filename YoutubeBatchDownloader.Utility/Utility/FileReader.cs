@@ -1,4 +1,4 @@
-﻿namespace YoutubeBatchDownloader.Service
+﻿namespace YoutubeBatchDownloader.Utility
 {
     using System;
     using System.Collections.Generic;
