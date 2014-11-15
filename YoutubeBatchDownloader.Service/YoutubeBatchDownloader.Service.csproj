@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Settings.StyleCop" />
     <None Include="ThunderVBS\ThunderVBSTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ThunderVBSTemplate.cs</LastGenOutput>
