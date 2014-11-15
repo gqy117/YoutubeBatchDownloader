@@ -2,6 +2,10 @@
 #################
 ## Eclipse
 #################
+*.log
+*.jrs
+*.ide
+*.edb
 *.cache
 *.pydevproject
 .project
