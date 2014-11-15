@@ -9,8 +9,8 @@
     using System.Text;
     using System.Threading.Tasks;
     using YoutubeBatchDownloader.Service;
-    using YoutubeBatchDownloader.Service.DI;
     using YoutubeBatchDownloader.Service.ThunderVBS;
+    using YoutubeBatchDownloader.Utility;
 
     [TestClass]
     [Ignore]

@@ -1,13 +1,13 @@
-using System;
-using System.Linq;
-using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
-using System.Reflection;
-using YoutubeBatchDownloader.Service;
-using YoutubeBatchDownloader.Service.DI;
-
 namespace YoutubeBatchDownloader.Web.App_Start
 {
+    using System;
+    using System.Linq;
+    using Microsoft.Practices.Unity;
+    using Microsoft.Practices.Unity.Configuration;
+    using System.Reflection;
+    using YoutubeBatchDownloader.Service;
+    using YoutubeBatchDownloader.Utility;
+
     /// <summary>
     /// Specifies the Unity configuration for the main container.
     /// </summary>

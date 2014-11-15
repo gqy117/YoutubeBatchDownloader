@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30516.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeBatchDownloaderWeb", "YoutubeBatchDownloader.Web\YoutubeBatchDownloader.Web.csproj", "{94D18BC8-5B29-4399-841E-A32E5BBDFA60}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeBatchDownloader.Web", "YoutubeBatchDownloader.Web\YoutubeBatchDownloader.Web.csproj", "{94D18BC8-5B29-4399-841E-A32E5BBDFA60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeBatchDownloaderModel", "YoutubeBatchDownloader.Model\YoutubeBatchDownloader.Model.csproj", "{3E228F82-58DB-4E2B-BA6D-A560F9D4E20A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeBatchDownloader.Model", "YoutubeBatchDownloader.Model\YoutubeBatchDownloader.Model.csproj", "{3E228F82-58DB-4E2B-BA6D-A560F9D4E20A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeBatchDownloaderService", "YoutubeBatchDownloader.Service\YoutubeBatchDownloader.Service.csproj", "{C95ED308-CBCC-49A1-886B-773EA6273747}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeBatchDownloader.Service", "YoutubeBatchDownloader.Service\YoutubeBatchDownloader.Service.csproj", "{C95ED308-CBCC-49A1-886B-773EA6273747}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeBatchDownloaderTest", "YoutubeBatchDownloader.Test\YoutubeBatchDownloader.Test.csproj", "{BBCE0DB3-5682-4A7D-9DF8-E58508F3E578}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeBatchDownloader.Test", "YoutubeBatchDownloader.Test\YoutubeBatchDownloader.Test.csproj", "{BBCE0DB3-5682-4A7D-9DF8-E58508F3E578}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeBatchDownloader.Utility", "YoutubeBatchDownloader.Utility\YoutubeBatchDownloader.Utility.csproj", "{20C1D0E1-7FF5-42FD-9682-78BAAC157F7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{BBCE0DB3-5682-4A7D-9DF8-E58508F3E578}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBCE0DB3-5682-4A7D-9DF8-E58508F3E578}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBCE0DB3-5682-4A7D-9DF8-E58508F3E578}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20C1D0E1-7FF5-42FD-9682-78BAAC157F7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20C1D0E1-7FF5-42FD-9682-78BAAC157F7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20C1D0E1-7FF5-42FD-9682-78BAAC157F7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20C1D0E1-7FF5-42FD-9682-78BAAC157F7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
