@@ -1,4 +1,4 @@
-﻿namespace YoutubeBatchDownloader
+﻿namespace YoutubeBatchDownloader.Win
 {
     partial class YoutubeDownloader
     {

@@ -80,9 +80,9 @@
       <Project>{c95ed308-cbcc-49a1-886b-773ea6273747}</Project>
       <Name>YoutubeBatchDownloader.Service</Name>
     </ProjectReference>
-    <ProjectReference Include="..\YoutubeBatchDownloader\YoutubeBatchDownloader.csproj">
+    <ProjectReference Include="..\YoutubeBatchDownloader.Win\YoutubeBatchDownloader.Win.csproj">
       <Project>{a7aae2d4-4287-477e-b31e-f2c4f7248e19}</Project>
-      <Name>YoutubeBatchDownloader</Name>
+      <Name>YoutubeBatchDownloader.Win</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
