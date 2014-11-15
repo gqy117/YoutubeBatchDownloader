@@ -62,7 +62,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="HtmlParserTestBase.cs" />
+    <Compile Include="TestBase.cs" />
     <Compile Include="ThunderVBS\ThunderVBSGeneratorTest.cs" />
     <Compile Include="RegexHelperTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

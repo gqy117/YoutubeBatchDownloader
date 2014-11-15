@@ -7,9 +7,9 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public static class FileReader
+    public class FileReader
     {
-        public static string ReadString(string fileName)
+        public string ReadString(string fileName)
         {
             using (StreamReader sr = new StreamReader(fileName))
             {

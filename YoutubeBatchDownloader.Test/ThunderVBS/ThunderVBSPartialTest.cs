@@ -10,7 +10,7 @@
     using YoutubeBatchDownloader.Service.ThunderVBS;
 
     [TestClass]
-    public class ThunderVBSPartialTest : HtmlParserTestBase
+    public class ThunderVBSPartialTest : TestBase
     {
         [TestMethod]
         public void GenerateThunderVbsTest()
