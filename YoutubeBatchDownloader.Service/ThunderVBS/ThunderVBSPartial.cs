@@ -17,10 +17,12 @@
         private string FileName { get; set; }
         #endregion
 
-        public ThunderVBSTemplate(IList<Video> listVideo)
+        public virtual string TransformText(IList<Video> listVideo)
         {
             this.ListVideo = listVideo;
             SetFileNameWithPrefix();
+
+            return TransformText();
         }
 
         private void SetFileNameWithPrefix()
