@@ -6,7 +6,7 @@ namespace YoutubeBatchDownloader.Web.App_Start
     using Microsoft.Practices.Unity.Configuration;
     using System.Reflection;
     using YoutubeBatchDownloader.Service;
-    using YoutubeBatchDownloader.Utility;
+    using Utility.UnityRegister;
 
     /// <summary>
     /// Specifies the Unity configuration for the main container.
