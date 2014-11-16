@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("YoutubeBatchDownloader.Utility")]
+[assembly: AssemblyTitle("Utility")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("YoutubeBatchDownloader.Utility")]
+[assembly: AssemblyProduct("Utility")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("bbd1d8ba-200c-485b-88ae-34e25386e867")]
+[assembly: Guid("1cea7d68-e75c-454a-ac11-5db15042c958")]
 
 // Version information for an assembly consists of the following four values:
 //
