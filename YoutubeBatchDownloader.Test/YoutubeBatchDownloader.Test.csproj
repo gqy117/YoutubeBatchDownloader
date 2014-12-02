@@ -91,6 +91,9 @@
     <Content Include="Utility\FileReaderTest.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="YoutubeTableHtmlParserTest\GenerateThunderVbsTestStartPosition2.vbs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="YoutubeTableHtmlParserTest\GenerateThunderVbsTest.vbs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

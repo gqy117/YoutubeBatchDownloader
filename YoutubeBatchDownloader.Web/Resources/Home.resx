@@ -126,6 +126,9 @@
   <data name="PasteYourYouTubeHtmlHere" xml:space="preserve">
     <value>Paste your YouTube html here...</value>
   </data>
+  <data name="StartIndex" xml:space="preserve">
+    <value>Start Index:</value>
+  </data>
   <data name="YouTubeHtml" xml:space="preserve">
     <value>YouTube Html</value>
   </data>

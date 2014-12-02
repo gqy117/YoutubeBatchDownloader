@@ -88,6 +88,15 @@ namespace YoutubeBatchDownloader.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Start Index:.
+        /// </summary>
+        public static string StartIndex {
+            get {
+                return ResourceManager.GetString("StartIndex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to YouTube Html.
         /// </summary>
         public static string YouTubeHtml {

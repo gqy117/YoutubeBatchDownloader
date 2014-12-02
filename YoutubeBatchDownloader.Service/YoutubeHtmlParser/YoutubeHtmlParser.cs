@@ -33,5 +33,14 @@
 
             return vbsString;
         }
+
+        public string Convert(string input, int startPosition)
+        {
+            var videoList = TableParser.ParseTable(input);
+            videoList = RegexHelper.RemoveInvalidCharacters(videoList);
+            string vbsString = ThunderVBSGenerator.GenerateThunderVbs(videoList, startPosition);
+
+            return vbsString;
+        }
     }
 }

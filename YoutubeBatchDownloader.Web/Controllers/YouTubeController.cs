@@ -1,4 +1,6 @@
-﻿namespace YoutubeBatchDownloader.Web.Controllers
+﻿
+
+namespace YoutubeBatchDownloader.Web.Controllers
 {
     using Microsoft.Practices.Unity;
     using System;
@@ -8,6 +10,7 @@
     using System.Text;
     using System.Web;
     using System.Web.Mvc;
+    using YoutubeBatchDownloader.Model;
     using YoutubeBatchDownloader.Service;
 
     public class YouTubeController : BaseController
@@ -23,9 +26,9 @@
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Convert(string youTubeHtml)
+        public ActionResult Convert(HomeView homeView)
         {
-            string vbsString = YoutubeTableHtmlParser.Convert(youTubeHtml);
+            string vbsString = YoutubeTableHtmlParser.Convert(homeView.YouTubeHtml, homeView.StartPosition);
 
             return File(vbsString, VbsFileName);
         }

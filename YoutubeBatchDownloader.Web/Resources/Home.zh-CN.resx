@@ -126,6 +126,9 @@
   <data name="PasteYourYouTubeHtmlHere" xml:space="preserve">
     <value>粘贴YouTube网页内容...</value>
   </data>
+  <data name="StartIndex" xml:space="preserve">
+    <value>初始号位:</value>
+  </data>
   <data name="YouTubeHtml" xml:space="preserve">
     <value>YouTube网页内容</value>
   </data>
