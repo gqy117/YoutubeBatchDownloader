@@ -18,3 +18,8 @@
 .buttonGo {
     text-align: center;
 }
+
+.startPosition {
+    width: 5%;
+    float: left;
+}
