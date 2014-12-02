@@ -23,5 +23,10 @@
         {
             return ThunderVBSTemplate.TransformText(input);
         }
+
+        public string GenerateThunderVbs(IList<Video> input, int startPosition)
+        {
+            return ThunderVBSTemplate.TransformText(input, startPosition);
+        }
     }
 }

@@ -25,9 +25,11 @@
         protected ThunderVBSTemplate ThunderVBSTemplate { get; set; }
         protected FileReader FileReader { get; set; }
         protected string GenerateThunderVbsTestvbs { get; set; }
+        protected string GenerateThunderVbsTestvbsStartPosition2 { get; set; }
         protected string ParseTableTestHtml { get; set; }
         protected const string FileParseTableTest = "YoutubeTableHtmlParserTest\\ParseTableTest.html";
         protected const string FileGenerateThunderVbsTest = "YoutubeTableHtmlParserTest\\GenerateThunderVbsTest.vbs";
+        protected const string FileGenerateThunderVbsTestStartPosition2 = "YoutubeTableHtmlParserTest\\GenerateThunderVbsTestStartPosition2.vbs";
         #endregion
 
         #region Constructors
@@ -63,6 +65,7 @@
         protected virtual void InitGenerateThunderVbsTestvbs()
         {
             GenerateThunderVbsTestvbs = FileReader.ReadString(FileGenerateThunderVbsTest);
+            GenerateThunderVbsTestvbsStartPosition2 = FileReader.ReadString(FileGenerateThunderVbsTestStartPosition2);
         }
         #endregion
     }

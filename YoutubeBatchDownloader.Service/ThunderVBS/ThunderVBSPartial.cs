@@ -17,6 +17,7 @@
         private string FileName { get; set; }
         #endregion
 
+        #region Transform
         public virtual string TransformText(IList<Video> listVideo)
         {
             this.ListVideo = listVideo;
@@ -24,6 +25,13 @@
 
             return TransformText();
         }
+        public virtual string TransformText(IList<Video> listVideo, int startPosition)
+        {
+            this.StartPosition = startPosition;
+
+            return this.TransformText(listVideo);
+        } 
+        #endregion
 
         private void SetFileNameWithPrefix()
         {

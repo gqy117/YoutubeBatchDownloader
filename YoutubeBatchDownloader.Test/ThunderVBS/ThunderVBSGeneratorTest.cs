@@ -28,5 +28,24 @@
             // Assert
             actual.ShouldBeEquivalentTo(expected);
         }
+
+        [TestMethod]
+        public void GenerateThunderVbsTest_ShouldSetNumberStartFrom002_WhenStartPositionIs2()
+        {
+            // Arrange
+            string expected = GenerateThunderVbsTestvbsStartPosition2;
+            int startPosition = 2;
+
+            // Act
+            IList<Video> input = new List<Video>()
+            {
+                new Video() { Id = "nDS-56QYIb4", Title = "Starcraft1" },
+                new Video() { Id = "ElwN1KP0EZk", Title = "Starcraft2" },
+            };
+            string actual = this.ThunderVBSGenerator.GenerateThunderVbs(input, startPosition);
+
+            // Assert
+            actual.ShouldBeEquivalentTo(expected);
+        }
     }
 }

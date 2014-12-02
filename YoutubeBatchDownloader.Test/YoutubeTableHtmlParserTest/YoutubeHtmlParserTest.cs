@@ -27,5 +27,20 @@
             // Assert
             actual.ShouldAllBeEquivalentTo(expected);
         }
+
+        [TestMethod]
+        public void ConvertTest_ShouldSetFileNameStartFrom002_WhenStartPositionIs2()
+        {
+            // Arrange
+            string expected = GenerateThunderVbsTestvbsStartPosition2;
+            string input = ParseTableTestHtml;
+            int startPosition = 2;
+
+            // Act
+            string actual = this.YoutubeTableHtmlParser.Convert(input, startPosition);
+
+            // Assert
+            actual.ShouldAllBeEquivalentTo(expected);
+        }
     }
 }
