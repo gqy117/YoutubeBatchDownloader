@@ -6,7 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public class VideoCommonDownloadTool : Video
+    public class VideoStandard : Video
     {
         protected override string BaseUrl
         {

@@ -24,17 +24,17 @@
         #endregion
 
         #region Convert
-        public override string Convert(string youtubeHtml)
+        public override string Convert(string youtubeHtmlString)
         {
-            var videoList = ConvertVideoList(youtubeHtml);
+            var videoList = ConvertVideoList(youtubeHtmlString);
             string vbsString = ThunderVBSGenerator.GenerateThunderVbs(videoList);
 
             return vbsString;
         }
 
-        public override string Convert(string youtubeHtml, int startPosition)
+        public string Convert(string youtubeHtmlString, int startPosition)
         {
-            var videoList = ConvertVideoList(youtubeHtml);
+            var videoList = ConvertVideoList(youtubeHtmlString);
             string vbsString = ThunderVBSGenerator.GenerateThunderVbs(videoList, startPosition);
 
             return vbsString;
