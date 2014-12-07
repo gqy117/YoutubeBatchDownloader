@@ -20,6 +20,14 @@
 }
 
 .startPosition {
-    width: 5%;
+    width: 40px;
     float: left;
 }
+
+.downloadMethod {
+    clear: both;
+}
+
+    .downloadMethod select {
+        width: 170px;
+    }

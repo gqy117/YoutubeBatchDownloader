@@ -11,6 +11,13 @@
             <div>
                 <h4 class="pull-left">@LocalResource.StartIndex</h4><input name="startPosition" type="text" class="form-control startPosition" value="1" />
             </div>
+            <div class="downloadMethod">
+                <h4 class="pull-left">@LocalResource.ConvertTo</h4>
+                <select class="pull-left form-control" name="convertMethod">
+                    <option value="0">@LocalResource.ThunderVBS</option>
+                    <option value="1">@LocalResource.StandardTextFile</option>
+                </select>
+            </div>
             <p><textarea class="YouTubeHtml" name="youTubeHtml" placeholder="@LocalResource.PasteYourYouTubeHtmlHere"></textarea></p>
             <p class="buttonGo"><a class="btn btn-primary btn-lg" id="buttonGo">@LocalResource.Go</a></p>
         </form>

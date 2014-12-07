@@ -56,5 +56,20 @@ namespace YoutubeBatchDownloader.Test
             // Assert
             actual.ShouldAllBeEquivalentTo(expected);
         }
+
+        [TestMethod]
+        public void ConvertWithStartPositionTest()
+        {
+            // Arrange
+            string expected = GenerateStandardTxtTest;
+            string youtubeHtmlString = ParseTableTestHtml;
+            int startPosition = 1;
+
+            // Act
+            string actual = this.CurrentYoutubeHtmlPaser.Convert(youtubeHtmlString, startPosition);
+
+            // Assert
+            actual.ShouldAllBeEquivalentTo(expected);
+        }
     }
 }

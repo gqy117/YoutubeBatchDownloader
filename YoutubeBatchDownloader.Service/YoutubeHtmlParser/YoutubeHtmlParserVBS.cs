@@ -9,10 +9,14 @@
     using Microsoft.Practices.Unity;
     using YoutubeBatchDownloader.Model;
 
-    public class YoutubeHtmlParserVBS : YoutubeHtmlParser<VideoVBS>
+    public class YoutubeHtmlParserVBS : YoutubeHtmlParser<VideoVBS>, IYoutubeHtmlParser
     {
         #region Properties
         private ThunderVBSGenerator ThunderVBSGenerator;
+        public string SaveAsFileName
+        {
+            get { return "y.vbs"; }
+        }
         #endregion
 
         #region Init
