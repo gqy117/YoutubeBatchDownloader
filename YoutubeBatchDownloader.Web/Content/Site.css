@@ -31,3 +31,7 @@
     .downloadMethod select {
         width: 170px;
     }
+
+#youTubeForm h4 {
+    width: 120px;
+}
