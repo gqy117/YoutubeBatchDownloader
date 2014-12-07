@@ -45,7 +45,9 @@
     <Compile Include="Sequence\ISequence.cs" />
     <Compile Include="Sequence\TitleFirstSequence.cs" />
     <Compile Include="Sequence\VideoFirstSequence.cs" />
-    <Compile Include="Video.cs" />
+    <Compile Include="Video\VideoCommonDownloadTool.cs" />
+    <Compile Include="Video\VideoVBS.cs" />
+    <Compile Include="Video\Video.cs" />
     <Compile Include="View\HomeView.cs" />
   </ItemGroup>
   <ItemGroup>

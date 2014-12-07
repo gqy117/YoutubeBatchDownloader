@@ -70,8 +70,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThunderVBS\ThunderVBSPartialTest.cs" />
     <Compile Include="Utility\FileReaderTest.cs" />
-    <Compile Include="YoutubeTableHtmlParserTest\TableParserTest.cs" />
-    <Compile Include="YoutubeTableHtmlParserTest\YoutubeHtmlParserTest.cs" />
+    <Compile Include="TableParser\TableParserTest.cs" />
+    <Compile Include="YoutubeTableHtmlParser\YoutubeHtmlParserVBSTest.cs" />
+    <Compile Include="YoutubeTableHtmlParser\YoutubeHtmlParserTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Utility\Utility.csproj">
@@ -91,13 +92,13 @@
     <Content Include="Utility\FileReaderTest.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="YoutubeTableHtmlParserTest\GenerateThunderVbsTestStartPosition2.vbs">
+    <Content Include="YoutubeTableHtmlParser\GenerateThunderVbsTestStartPosition2.vbs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="YoutubeTableHtmlParserTest\GenerateThunderVbsTest.vbs">
+    <Content Include="YoutubeTableHtmlParser\GenerateThunderVbsTest.vbs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="YoutubeTableHtmlParserTest\ParseTableTest.html">
+    <Content Include="YoutubeTableHtmlParser\ParseTableTest.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -12,8 +12,21 @@
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
-    public class YoutubeHtmlParserTest : TestBase
+    public class YoutubeHtmlParserVBSTest : YoutubeHtmlParserTest<YoutubeHtmlParserVBS>
     {
+        #region Init
+        [TestInitialize]
+        public virtual void Init()
+        {
+            base.Init();
+        }
+
+        protected override void InitGenerateThunderTest()
+        {
+            this.CurrentYoutubeHtmlPaser = YoutubeHtmlParserVBS;
+        }
+        #endregion
+
         [TestMethod]
         public void ConvertTest()
         {
@@ -22,7 +35,7 @@
             string input = ParseTableTestHtml;
 
             // Act
-            string actual = this.YoutubeTableHtmlParser.Convert(input);
+            string actual = this.CurrentYoutubeHtmlPaser.Convert(input);
 
             // Assert
             actual.ShouldAllBeEquivalentTo(expected);
@@ -37,7 +50,7 @@
             int startPosition = 2;
 
             // Act
-            string actual = this.YoutubeTableHtmlParser.Convert(input, startPosition);
+            string actual = this.CurrentYoutubeHtmlPaser.Convert(input, startPosition);
 
             // Assert
             actual.ShouldAllBeEquivalentTo(expected);

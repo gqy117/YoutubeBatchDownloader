@@ -19,7 +19,7 @@
     {
         #region Properties
         protected IUnityContainer Container { get; set; }
-        protected YoutubeHtmlParser YoutubeTableHtmlParser { get; set; }
+        protected YoutubeHtmlParserVBS YoutubeHtmlParserVBS { get; set; }
         protected ThunderVBSGenerator ThunderVBSGenerator { get; set; }
         protected TableParser TableParser { get; set; }
         protected ThunderVBSTemplate ThunderVBSTemplate { get; set; }
@@ -27,14 +27,14 @@
         protected string GenerateThunderVbsTestvbs { get; set; }
         protected string GenerateThunderVbsTestvbsStartPosition2 { get; set; }
         protected string ParseTableTestHtml { get; set; }
-        protected const string FileParseTableTest = "YoutubeTableHtmlParserTest\\ParseTableTest.html";
-        protected const string FileGenerateThunderVbsTest = "YoutubeTableHtmlParserTest\\GenerateThunderVbsTest.vbs";
-        protected const string FileGenerateThunderVbsTestStartPosition2 = "YoutubeTableHtmlParserTest\\GenerateThunderVbsTestStartPosition2.vbs";
+        protected const string FileParseTableTest = "YoutubeTableHtmlParser\\ParseTableTest.html";
+        protected const string FileGenerateThunderVbsTest = "YoutubeTableHtmlParser\\GenerateThunderVbsTest.vbs";
+        protected const string FileGenerateThunderVbsTestStartPosition2 = "YoutubeTableHtmlParser\\GenerateThunderVbsTestStartPosition2.vbs";
         #endregion
 
         #region Constructors
         [TestInitialize]
-        public void Init()
+        public virtual void Init()
         {
             InitUnityContainer();
             ResolveClasses();
@@ -44,7 +44,7 @@
 
         protected virtual void ResolveClasses()
         {
-            YoutubeTableHtmlParser = Container.Resolve<YoutubeHtmlParser>();
+            YoutubeHtmlParserVBS = Container.Resolve<YoutubeHtmlParserVBS>();
             ThunderVBSGenerator = Container.Resolve<ThunderVBSGenerator>();
             TableParser = Container.Resolve<TableParser>();
             ThunderVBSTemplate = Container.Resolve<ThunderVBSTemplate>();
