@@ -15,6 +15,7 @@
 
         protected RegexHelper RegexHelper { get; set; }
         protected TableParser TableParser { get; set; }
+        protected IGenerator CurrentGenerator { get; set; }
         #endregion
 
         #region Init
@@ -27,7 +28,23 @@
         #endregion
 
         #region Convert
-        public abstract string Convert(string youtubeHtmlString);
+        #region Convert
+        public virtual string Convert(string youtubeHtmlString)
+        {
+            var videoList = ConvertVideoList(youtubeHtmlString);
+            string vbsString = CurrentGenerator.Generate(videoList);
+
+            return vbsString;
+        }
+
+        public virtual string Convert(string youtubeHtmlString, int startPosition)
+        {
+            var videoList = ConvertVideoList(youtubeHtmlString);
+            string vbsString = CurrentGenerator.Generate(videoList, startPosition);
+
+            return vbsString;
+        }
+        #endregion
         #endregion
 
         protected IList<Video> ConvertVideoList(string youtubeHtml)

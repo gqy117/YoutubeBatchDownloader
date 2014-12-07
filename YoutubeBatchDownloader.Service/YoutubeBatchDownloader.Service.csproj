@@ -48,16 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Generator\IGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegexHelper.cs" />
-    <Compile Include="StandardTxt\StandardTxtGenerator.cs" />
-    <Compile Include="ThunderVBS\ThunderVBSTemplate.cs">
+    <Compile Include="Generator\StandardTxt\StandardTxtGenerator.cs" />
+    <Compile Include="Generator\ThunderVBS\ThunderVBSTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ThunderVBSTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="ThunderVBS\ThunderVBSGenerator.cs" />
-    <Compile Include="ThunderVBS\ThunderVBSPartial.cs" />
+    <Compile Include="Generator\ThunderVBS\ThunderVBSGenerator.cs" />
+    <Compile Include="Generator\ThunderVBS\ThunderVBSPartial.cs" />
     <Compile Include="TablePaser\TableParser.cs" />
     <Compile Include="YoutubeHtmlParser\IYoutubeHtmlParser.cs" />
     <Compile Include="YoutubeHtmlParser\YoutubeHtmlParserStandard.cs" />
@@ -67,7 +68,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Settings.StyleCop" />
-    <None Include="ThunderVBS\ThunderVBSTemplate.tt">
+    <None Include="Generator\ThunderVBS\ThunderVBSTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ThunderVBSTemplate.cs</LastGenOutput>
     </None>

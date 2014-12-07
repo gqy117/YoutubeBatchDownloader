@@ -7,9 +7,9 @@
     using System.Threading.Tasks;
     using Microsoft.Practices.Unity;
     using YoutubeBatchDownloader.Model;
-    using YoutubeBatchDownloader.Service.ThunderVBS;
+    using YoutubeBatchDownloader.Service.Generator.ThunderVBS;
 
-    public class ThunderVBSGenerator
+    public class ThunderVBSGenerator : IGenerator
     {
         private ThunderVBSTemplate ThunderVBSTemplate { get; set; }
 
@@ -19,12 +19,12 @@
             ThunderVBSTemplate = thunderVBSTemplate;
         }
 
-        public string GenerateThunderVbs(IList<Video> input)
+        public string Generate(IList<Video> input)
         {
             return ThunderVBSTemplate.TransformText(input);
         }
 
-        public string GenerateThunderVbs(IList<Video> input, int startPosition)
+        public string Generate(IList<Video> input, int startPosition)
         {
             return ThunderVBSTemplate.TransformText(input, startPosition);
         }

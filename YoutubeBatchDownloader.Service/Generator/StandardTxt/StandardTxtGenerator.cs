@@ -7,11 +7,15 @@
     using System.Threading.Tasks;
     using Microsoft.Practices.Unity;
     using YoutubeBatchDownloader.Model;
-    using YoutubeBatchDownloader.Service.ThunderVBS;
 
-    public class StandardTxtGenerator
+    public class StandardTxtGenerator : IGenerator
     {
-        public string GenerateTxt(IList<Video> videoList)
+        public string Generate(IList<Video> videoList)
+        {
+            return Generate(videoList, default(int));
+        }
+
+        public string Generate(IList<Video> videoList, int startPosition)
         {
             string youtubeString = String.Empty;
 

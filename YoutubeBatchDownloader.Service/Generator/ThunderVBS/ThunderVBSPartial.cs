@@ -1,4 +1,4 @@
-﻿namespace YoutubeBatchDownloader.Service.ThunderVBS
+﻿namespace YoutubeBatchDownloader.Service.Generator.ThunderVBS
 {
     using System;
     using System.Collections.Generic;
@@ -23,7 +23,7 @@
             this.ListVideo = listVideo;
             SetFileNameWithPrefix();
 
-            return TransformText();
+            return this.TransformText();
         }
         public virtual string TransformText(IList<Video> listVideo, int startPosition)
         {
