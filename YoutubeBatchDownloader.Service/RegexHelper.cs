@@ -33,7 +33,7 @@
             return input.Replace(removedMark, String.Empty);
         }
 
-        public IList<Video> RemoveInvalidCharacters(IList<Video> input)
+        public IList<TVideo> RemoveInvalidCharacters<TVideo>(IList<TVideo> input) where TVideo : Video
         {
             foreach (var video in input)
             {

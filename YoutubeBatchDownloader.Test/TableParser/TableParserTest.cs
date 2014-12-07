@@ -20,14 +20,14 @@
             // Arrange
             IList<Video> expected = new List<Video>()
             {
-                new Video() { Id = "nDS-56QYIb4", Title = "Starcraft1" },
-                new Video() { Id = "ElwN1KP0EZk", Title = "Starcraft2" },
+                new VideoVBS() { Id = "nDS-56QYIb4", Title = "Starcraft1" },
+                new VideoVBS() { Id = "ElwN1KP0EZk", Title = "Starcraft2" },
             };
 
             string input = ParseTableTestHtml;
 
             // Act
-            IList<Video> actual = this.TableParser.ParseTable(input);
+            IList<Video> actual = this.TableParser.ParseTable<VideoVBS>(input);
 
             // Assert
             actual.ShouldBeEquivalentTo(expected);

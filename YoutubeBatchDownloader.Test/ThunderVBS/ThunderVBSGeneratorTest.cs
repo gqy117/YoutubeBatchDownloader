@@ -20,8 +20,8 @@
             // Act
             IList<Video> input = new List<Video>()
             {
-                new Video() { Id = "nDS-56QYIb4", Title = "Starcraft1" },
-                new Video() { Id = "ElwN1KP0EZk", Title = "Starcraft2" },
+                new VideoVBS() { Id = "nDS-56QYIb4", Title = "Starcraft1" },
+                new VideoVBS() { Id = "ElwN1KP0EZk", Title = "Starcraft2" },
             };
             string actual = this.ThunderVBSGenerator.GenerateThunderVbs(input);
 
@@ -39,8 +39,8 @@
             // Act
             IList<Video> input = new List<Video>()
             {
-                new Video() { Id = "nDS-56QYIb4", Title = "Starcraft1" },
-                new Video() { Id = "ElwN1KP0EZk", Title = "Starcraft2" },
+                new VideoVBS() { Id = "nDS-56QYIb4", Title = "Starcraft1" },
+                new VideoVBS() { Id = "ElwN1KP0EZk", Title = "Starcraft2" },
             };
             string actual = this.ThunderVBSGenerator.GenerateThunderVbs(input, startPosition);
 

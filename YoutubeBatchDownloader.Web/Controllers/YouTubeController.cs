@@ -15,20 +15,20 @@ namespace YoutubeBatchDownloader.Web.Controllers
 
     public class YouTubeController : BaseController
     {
-        private YoutubeHtmlParser YoutubeTableHtmlParser { get; set; }
+        private YoutubeHtmlParserVBS YoutubeTableHtmlParserVBS { get; set; }
         private const string VbsFileName = "y.vbs";
 
         [InjectionMethod]
-        public void Init(YoutubeHtmlParser youtubeHtmlParser)
+        public void Init(YoutubeHtmlParserVBS youtubeHtmlParserVBS)
         {
-            YoutubeTableHtmlParser = youtubeHtmlParser;
+            YoutubeTableHtmlParserVBS = youtubeHtmlParserVBS;
         }
 
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult Convert(HomeView homeView)
         {
-            string vbsString = YoutubeTableHtmlParser.Convert(homeView.YouTubeHtml, homeView.StartPosition);
+            string vbsString = YoutubeTableHtmlParserVBS.Convert(homeView.YouTubeHtml, homeView.StartPosition);
 
             return File(vbsString, VbsFileName);
         }

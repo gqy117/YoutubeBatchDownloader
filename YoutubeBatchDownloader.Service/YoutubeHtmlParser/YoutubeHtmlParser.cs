@@ -9,45 +9,32 @@
     using Microsoft.Practices.Unity;
     using YoutubeBatchDownloader.Model;
 
-    public class YoutubeHtmlParser
+    public abstract class YoutubeHtmlParser<TVideo> where TVideo : Video, new()
     {
         #region Properties
-        private RegexHelper RegexHelper;
-        private ThunderVBSGenerator ThunderVBSGenerator;
-        private TableParser TableParser; 
+
+        protected RegexHelper RegexHelper { get; set; }
+        protected TableParser TableParser { get; set; }
         #endregion
 
         #region Init
         [InjectionMethod]
-        public void Init(RegexHelper regexHelper, ThunderVBSGenerator thunderVBSGenerator, TableParser tableParser)
+        public virtual void Init(RegexHelper regexHelper, TableParser tableParser)
         {
             RegexHelper = regexHelper;
-            ThunderVBSGenerator = thunderVBSGenerator;
             TableParser = tableParser;
-        } 
+        }
         #endregion
 
         #region Convert
-        public string Convert(string youtubeHtml)
-        {
-            var videoList = ConvertVideoList(youtubeHtml);
-            string vbsString = ThunderVBSGenerator.GenerateThunderVbs(videoList);
+        public abstract string Convert(string youtubeHtml);
 
-            return vbsString;
-        }
-
-        public string Convert(string youtubeHtml, int startPosition)
-        {
-            var videoList = ConvertVideoList(youtubeHtml);
-            string vbsString = ThunderVBSGenerator.GenerateThunderVbs(videoList, startPosition);
-
-            return vbsString;
-        } 
+        public abstract string Convert(string youtubeHtml, int startPosition);
         #endregion
 
         protected IList<Video> ConvertVideoList(string youtubeHtml)
         {
-            var videoList = TableParser.ParseTable(youtubeHtml);
+            var videoList = TableParser.ParseTable<TVideo>(youtubeHtml);
             videoList = RegexHelper.RemoveInvalidCharacters(videoList);
 
             return videoList;

@@ -14,7 +14,7 @@
         private const string DataVideo = "data-video-id=\"([^\"]+)\"";
         private ISequence GroupPosition { get; set; }
 
-        public IList<Video> ParseTable(string youtubeHtml)
+        public IList<Video> ParseTable<TVideo>(string youtubeHtml) where TVideo : Video, new()
         {
             string dataTitleFirst = String.Format("{0}(.*){1}", DataTitle, DataVideo);
             string dataVideoFirst = String.Format("{0}(.*){1}", DataVideo, DataTitle);
@@ -26,7 +26,7 @@
             {
                 SetGroupPosition(match.Groups);
 
-                listVideo.Add(new Video()
+                listVideo.Add(new TVideo()
                 {
                     Id = match.Groups[GroupPosition.IdGroupPosition].Value,
                     Title = match.Groups[GroupPosition.TitleGroupPosition].Value,
