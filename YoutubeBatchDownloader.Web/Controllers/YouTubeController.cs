@@ -1,6 +1,4 @@
-﻿
-
-namespace YoutubeBatchDownloader.Web.Controllers
+﻿namespace YoutubeBatchDownloader.Web.Controllers
 {
     using Microsoft.Practices.Unity;
     using System;
@@ -16,21 +14,32 @@ namespace YoutubeBatchDownloader.Web.Controllers
     public class YouTubeController : BaseController
     {
         private YoutubeHtmlParserVBS YoutubeTableHtmlParserVBS { get; set; }
-        private const string VbsFileName = "y.vbs";
+        private YoutubeHtmlParserStandard YoutubeHtmlParserStandard { get; set; }
+        private IYoutubeHtmlParser YoutubeHtmlParser { get; set; }
+        private IList<IYoutubeHtmlParser> IListYoutubeHtmlParser { get; set; }
 
         [InjectionMethod]
-        public void Init(YoutubeHtmlParserVBS youtubeHtmlParserVBS)
+        public void Init(YoutubeHtmlParserVBS youtubeHtmlParserVBS, YoutubeHtmlParserStandard youtubeHtmlParserStandard)
         {
             YoutubeTableHtmlParserVBS = youtubeHtmlParserVBS;
+            YoutubeHtmlParserStandard = youtubeHtmlParserStandard;
+
+            IListYoutubeHtmlParser = new List<IYoutubeHtmlParser>()
+            {
+                YoutubeTableHtmlParserVBS,
+                YoutubeHtmlParserStandard
+            };
         }
 
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult Convert(HomeView homeView)
         {
-            string vbsString = YoutubeTableHtmlParserVBS.Convert(homeView.YouTubeHtml, homeView.StartPosition);
+            YoutubeHtmlParser = IListYoutubeHtmlParser[homeView.ConvertMethod];
 
-            return File(vbsString, VbsFileName);
+            string vbsString = YoutubeHtmlParser.Convert(homeView.YouTubeHtml, homeView.StartPosition);
+
+            return File(vbsString, YoutubeHtmlParser.SaveAsFileName);
         }
     }
 }

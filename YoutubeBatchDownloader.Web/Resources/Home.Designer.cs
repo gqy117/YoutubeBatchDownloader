@@ -61,6 +61,15 @@ namespace YoutubeBatchDownloader.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Convert To:.
+        /// </summary>
+        public static string ConvertTo {
+            get {
+                return ResourceManager.GetString("ConvertTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Go!.
         /// </summary>
         public static string Go {
@@ -88,11 +97,29 @@ namespace YoutubeBatchDownloader.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Standard Text File.
+        /// </summary>
+        public static string StandardTextFile {
+            get {
+                return ResourceManager.GetString("StandardTextFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Start Index:.
         /// </summary>
         public static string StartIndex {
             get {
                 return ResourceManager.GetString("StartIndex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thunder VBS.
+        /// </summary>
+        public static string ThunderVBS {
+            get {
+                return ResourceManager.GetString("ThunderVBS", resourceCulture);
             }
         }
         

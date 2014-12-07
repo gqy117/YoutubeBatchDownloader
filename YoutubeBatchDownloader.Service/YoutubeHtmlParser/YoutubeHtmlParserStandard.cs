@@ -9,9 +9,15 @@
     using Microsoft.Practices.Unity;
     using YoutubeBatchDownloader.Model;
 
-    public class YoutubeHtmlParserStandard : YoutubeHtmlParser<VideoStandard>
+    public class YoutubeHtmlParserStandard : YoutubeHtmlParser<VideoStandard>, IYoutubeHtmlParser
     {
-        private StandardTxtGenerator StandardTxtGenerator { get; set; }
+        #region Properties
+        public string SaveAsFileName
+        {
+            get { return "YoutubeDownload.txt"; }
+        }
+        private StandardTxtGenerator StandardTxtGenerator { get; set; } 
+        #endregion
 
         #region Init
         [InjectionMethod]
@@ -28,6 +34,11 @@
             string vbsString = StandardTxtGenerator.GenerateTxt(videoList);
 
             return vbsString;
+        }
+
+        public string Convert(string youtubeHtmlString, int startPosition)
+        {
+            return Convert(youtubeHtmlString);
         }
         #endregion
     }

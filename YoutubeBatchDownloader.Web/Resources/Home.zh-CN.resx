@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ConvertTo" xml:space="preserve">
+    <value>转成:</value>
+  </data>
   <data name="Go" xml:space="preserve">
     <value>开始!</value>
   </data>
@@ -126,8 +129,14 @@
   <data name="PasteYourYouTubeHtmlHere" xml:space="preserve">
     <value>粘贴YouTube网页内容...</value>
   </data>
+  <data name="StandardTextFile" xml:space="preserve">
+    <value>普通文本文件</value>
+  </data>
   <data name="StartIndex" xml:space="preserve">
     <value>初始号位:</value>
+  </data>
+  <data name="ThunderVBS" xml:space="preserve">
+    <value>迅雷VBS文件</value>
   </data>
   <data name="YouTubeHtml" xml:space="preserve">
     <value>YouTube网页内容</value>
