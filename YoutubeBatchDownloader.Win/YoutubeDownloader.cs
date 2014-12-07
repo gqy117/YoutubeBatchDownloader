@@ -13,11 +13,11 @@
 
     public partial class YoutubeDownloader : Form
     {
-        private readonly YoutubeHtmlParser YoutubeHtmlParser;
+        private readonly IYoutubeHtmlParser YoutubeHtmlParser;
         public YoutubeDownloader()
         {
             InitializeComponent();
-            this.YoutubeHtmlParser = new YoutubeHtmlParser();
+            this.YoutubeHtmlParser = new YoutubeHtmlParserVBS();
         }
 
         private void buttonConvert_Click(object sender, EventArgs e)
