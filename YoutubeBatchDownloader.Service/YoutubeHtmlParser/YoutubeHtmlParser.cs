@@ -27,9 +27,7 @@
         #endregion
 
         #region Convert
-        public abstract string Convert(string youtubeHtml);
-
-        public abstract string Convert(string youtubeHtml, int startPosition);
+        public abstract string Convert(string youtubeHtmlString);
         #endregion
 
         protected IList<Video> ConvertVideoList(string youtubeHtml)

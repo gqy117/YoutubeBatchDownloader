@@ -19,7 +19,6 @@
     {
         #region Properties
         protected IUnityContainer Container { get; set; }
-        protected YoutubeHtmlParserVBS YoutubeHtmlParserVBS { get; set; }
         protected ThunderVBSGenerator ThunderVBSGenerator { get; set; }
         protected TableParser TableParser { get; set; }
         protected ThunderVBSTemplate ThunderVBSTemplate { get; set; }
@@ -44,7 +43,6 @@
 
         protected virtual void ResolveClasses()
         {
-            YoutubeHtmlParserVBS = Container.Resolve<YoutubeHtmlParserVBS>();
             ThunderVBSGenerator = Container.Resolve<ThunderVBSGenerator>();
             TableParser = Container.Resolve<TableParser>();
             ThunderVBSTemplate = Container.Resolve<ThunderVBSTemplate>();

@@ -1,28 +1,31 @@
 ﻿namespace YoutubeBatchDownloader.Test
 {
     using System;
-    using System.IO;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-    using YoutubeBatchDownloader.Service;
     using FluentAssertions;
-    using YoutubeBatchDownloader.Model;
+    using Microsoft.Practices.Unity;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using YoutubeBatchDownloader.Model;
+    using YoutubeBatchDownloader.Service;
 
     [TestClass]
     public class YoutubeHtmlParserVBSTest : YoutubeHtmlParserTest<YoutubeHtmlParserVBS>
     {
+        protected YoutubeHtmlParserVBS YoutubeHtmlParserVBS { get; set; }
         #region Init
         [TestInitialize]
-        public virtual void Init()
+        public override void Init()
         {
             base.Init();
         }
 
-        protected override void InitGenerateThunderTest()
+        protected override void InitCurrentYoutubeHtmlPaser()
         {
+            YoutubeHtmlParserVBS = Container.Resolve<YoutubeHtmlParserVBS>();
             this.CurrentYoutubeHtmlPaser = YoutubeHtmlParserVBS;
         }
         #endregion

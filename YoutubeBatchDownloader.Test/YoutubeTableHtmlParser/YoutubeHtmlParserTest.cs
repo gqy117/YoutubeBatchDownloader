@@ -26,10 +26,11 @@ namespace YoutubeBatchDownloader.Test
         public override void Init()
         {
             base.Init();
-            InitGenerateThunderTest();
+            
+            InitCurrentYoutubeHtmlPaser();
         }
 
-        protected abstract void InitGenerateThunderTest();
+        protected abstract void InitCurrentYoutubeHtmlPaser();
         #endregion
     }
 }
