@@ -11,9 +11,11 @@
 
     public class YoutubeHtmlParser
     {
+        #region Properties
         private RegexHelper RegexHelper;
         private ThunderVBSGenerator ThunderVBSGenerator;
-        private TableParser TableParser;
+        private TableParser TableParser; 
+        #endregion
 
         #region Init
         [InjectionMethod]
@@ -25,22 +27,30 @@
         } 
         #endregion
 
-        public string Convert(string input)
+        #region Convert
+        public string Convert(string youtubeHtml)
         {
-            var videoList = TableParser.ParseTable(input);
-            videoList = RegexHelper.RemoveInvalidCharacters(videoList);
+            var videoList = ConvertVideoList(youtubeHtml);
             string vbsString = ThunderVBSGenerator.GenerateThunderVbs(videoList);
 
             return vbsString;
         }
 
-        public string Convert(string input, int startPosition)
+        public string Convert(string youtubeHtml, int startPosition)
         {
-            var videoList = TableParser.ParseTable(input);
-            videoList = RegexHelper.RemoveInvalidCharacters(videoList);
+            var videoList = ConvertVideoList(youtubeHtml);
             string vbsString = ThunderVBSGenerator.GenerateThunderVbs(videoList, startPosition);
 
             return vbsString;
+        } 
+        #endregion
+
+        protected IList<Video> ConvertVideoList(string youtubeHtml)
+        {
+            var videoList = TableParser.ParseTable(youtubeHtml);
+            videoList = RegexHelper.RemoveInvalidCharacters(videoList);
+
+            return videoList;
         }
     }
 }

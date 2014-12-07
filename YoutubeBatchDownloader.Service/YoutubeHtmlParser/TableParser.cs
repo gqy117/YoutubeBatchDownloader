@@ -14,7 +14,7 @@
         private const string DataVideo = "data-video-id=\"([^\"]+)\"";
         private ISequence GroupPosition { get; set; }
 
-        public IList<Video> ParseTable(string input)
+        public IList<Video> ParseTable(string youtubeHtml)
         {
             string dataTitleFirst = String.Format("{0}(.*){1}", DataTitle, DataVideo);
             string dataVideoFirst = String.Format("{0}(.*){1}", DataVideo, DataTitle);
@@ -22,7 +22,7 @@
 
             IList<Video> listVideo = new List<Video>();
 
-            foreach (Match match in Regex.Matches(input, regexExpressionString, RegexOptions.IgnoreCase))
+            foreach (Match match in Regex.Matches(youtubeHtml, regexExpressionString, RegexOptions.IgnoreCase))
             {
                 SetGroupPosition(match.Groups);
 
