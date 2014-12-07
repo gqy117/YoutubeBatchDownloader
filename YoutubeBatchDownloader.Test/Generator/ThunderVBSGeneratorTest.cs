@@ -23,7 +23,7 @@
                 new VideoVBS() { Id = "nDS-56QYIb4", Title = "Starcraft1" },
                 new VideoVBS() { Id = "ElwN1KP0EZk", Title = "Starcraft2" },
             };
-            string actual = this.ThunderVBSGenerator.GenerateThunderVbs(input);
+            string actual = this.ThunderVBSGenerator.Generate(input);
 
             // Assert
             actual.ShouldBeEquivalentTo(expected);
@@ -42,7 +42,7 @@
                 new VideoVBS() { Id = "nDS-56QYIb4", Title = "Starcraft1" },
                 new VideoVBS() { Id = "ElwN1KP0EZk", Title = "Starcraft2" },
             };
-            string actual = this.ThunderVBSGenerator.GenerateThunderVbs(input, startPosition);
+            string actual = this.ThunderVBSGenerator.Generate(input, startPosition);
 
             // Assert
             actual.ShouldBeEquivalentTo(expected);

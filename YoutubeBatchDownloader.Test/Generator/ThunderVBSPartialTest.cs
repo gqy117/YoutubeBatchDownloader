@@ -7,7 +7,7 @@
     using YoutubeBatchDownloader.Service;
     using FluentAssertions;
     using YoutubeBatchDownloader.Model;
-    using YoutubeBatchDownloader.Service.ThunderVBS;
+    using YoutubeBatchDownloader.Service.Generator.ThunderVBS;
 
     [TestClass]
     public class ThunderVBSPartialTest : TestBase

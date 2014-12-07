@@ -12,7 +12,6 @@
     public class YoutubeHtmlParserVBS : YoutubeHtmlParser<VideoVBS>, IYoutubeHtmlParser
     {
         #region Properties
-        private ThunderVBSGenerator ThunderVBSGenerator;
         public string SaveAsFileName
         {
             get { return "y.vbs"; }
@@ -23,26 +22,8 @@
         [InjectionMethod]
         public void Init(ThunderVBSGenerator thunderVBSGenerator)
         {
-            ThunderVBSGenerator = thunderVBSGenerator;
+            CurrentGenerator = thunderVBSGenerator;
         }
-        #endregion
-
-        #region Convert
-        public override string Convert(string youtubeHtmlString)
-        {
-            var videoList = ConvertVideoList(youtubeHtmlString);
-            string vbsString = ThunderVBSGenerator.GenerateThunderVbs(videoList);
-
-            return vbsString;
-        }
-
-        public string Convert(string youtubeHtmlString, int startPosition)
-        {
-            var videoList = ConvertVideoList(youtubeHtmlString);
-            string vbsString = ThunderVBSGenerator.GenerateThunderVbs(videoList, startPosition);
-
-            return vbsString;
-        } 
         #endregion
     }
 }

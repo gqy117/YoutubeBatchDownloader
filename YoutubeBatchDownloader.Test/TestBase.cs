@@ -9,7 +9,7 @@
     using Microsoft.Practices.Unity;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using YoutubeBatchDownloader.Service;
-    using YoutubeBatchDownloader.Service.ThunderVBS;
+    using YoutubeBatchDownloader.Service.Generator.ThunderVBS;
     using Utility;
     using Utility.UnityRegister;
 
