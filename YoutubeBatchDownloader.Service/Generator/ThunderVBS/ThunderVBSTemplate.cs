@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace YoutubeBatchDownloader.Service.ThunderVBS
+namespace YoutubeBatchDownloader.Service.Generator.ThunderVBS
 {
     using System.Linq;
     using System.Text;
@@ -18,7 +18,7 @@ namespace YoutubeBatchDownloader.Service.ThunderVBS
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\Dev\Github\YoutubeBatchDownloader\YoutubeBatchDownloader.Service\ThunderVBS\ThunderVBSTemplate.tt"
+    #line 1 "D:\Dev\Github\YoutubeBatchDownloader\YoutubeBatchDownloader.Service\Generator\ThunderVBS\ThunderVBSTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class ThunderVBSTemplate : ThunderVBSTemplateBase
     {
@@ -30,7 +30,7 @@ namespace YoutubeBatchDownloader.Service.ThunderVBS
         {
             this.Write("Set ThunderAgent = CreateObject(\"ThunderAgent.Agent\")\r\n");
             
-            #line 7 "D:\Dev\Github\YoutubeBatchDownloader\YoutubeBatchDownloader.Service\ThunderVBS\ThunderVBSTemplate.tt"
+            #line 7 "D:\Dev\Github\YoutubeBatchDownloader\YoutubeBatchDownloader.Service\Generator\ThunderVBS\ThunderVBSTemplate.tt"
  
 	foreach (var video in ListVideo)
 	{
@@ -41,21 +41,21 @@ namespace YoutubeBatchDownloader.Service.ThunderVBS
             #line hidden
             this.Write("Call ThunderAgent.AddTask(\"");
             
-            #line 12 "D:\Dev\Github\YoutubeBatchDownloader\YoutubeBatchDownloader.Service\ThunderVBS\ThunderVBSTemplate.tt"
+            #line 12 "D:\Dev\Github\YoutubeBatchDownloader\YoutubeBatchDownloader.Service\Generator\ThunderVBS\ThunderVBSTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(video.DownloadUrl));
             
             #line default
             #line hidden
             this.Write("\",\"");
             
-            #line 12 "D:\Dev\Github\YoutubeBatchDownloader\YoutubeBatchDownloader.Service\ThunderVBS\ThunderVBSTemplate.tt"
+            #line 12 "D:\Dev\Github\YoutubeBatchDownloader\YoutubeBatchDownloader.Service\Generator\ThunderVBS\ThunderVBSTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(video.FileNameWithPrefix));
             
             #line default
             #line hidden
             this.Write("\",\"\",\"\",\"\",1,0,10)\r\n");
             
-            #line 13 "D:\Dev\Github\YoutubeBatchDownloader\YoutubeBatchDownloader.Service\ThunderVBS\ThunderVBSTemplate.tt"
+            #line 13 "D:\Dev\Github\YoutubeBatchDownloader\YoutubeBatchDownloader.Service\Generator\ThunderVBS\ThunderVBSTemplate.tt"
  
 	
 	}
