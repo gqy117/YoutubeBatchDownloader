@@ -5,27 +5,7 @@ Convert html from the website "http://u.f-q.me/", and generate vbs to call Thund
 
 Welcome!
 
-###1. YoutubeBatchDownloader.Model
-Data model layer.
-
-
-
-###2. YoutubeBatchDownloader.Service
-Logic layer.
-
-
-
-###3. YoutubeBatchDownloader.Test
-Unit tests.
-
-
-
-###4. Utility
-Utilities such as reading string from files and **Unity** register.
-
-
-
-###5. YoutubeBatchDownloader.Web
+###1. YoutubeBatchDownloader.Web
 (1) Asp.net **MVC4** project.
 
 (2) Use **Unity** as DI framework.
@@ -34,5 +14,29 @@ Utilities such as reading string from files and **Unity** register.
 
 (4) **Globalization**, support Chinese.
 
-###6. YoutubeBatchDownloader.Win
+
+###2. YoutubeBatchDownloader.Win
 Winform project.
+
+
+###3. YoutubeBatchDownloader.Model
+Data model layer.
+
+
+
+###4. YoutubeBatchDownloader.Service
+Logic layer.
+
+
+
+###5. YoutubeBatchDownloader.Test
+Unit tests.
+
+
+
+###6. Utility
+Utilities such as reading string from files and **Unity** register.
+
+
+
+
