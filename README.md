@@ -3,7 +3,7 @@ YoutubeBatchDownloader
 
 Convert html from the website "http://u.f-q.me/", and generate vbs to call Thunder to do the batch download.
 
-Welcome!
+
 
 ###1. YoutubeBatchDownloader.Web
 (1) Asp.net **MVC4** project.
