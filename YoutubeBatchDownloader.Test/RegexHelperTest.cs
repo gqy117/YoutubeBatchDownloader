@@ -67,8 +67,8 @@
             IList<Video> expected = new List<Video>()
             {
                 new VideoVBS() { Id = "nDS-56QYIb4", Title = "Starcraft1" },
-                new VideoVBS() { Id = "ElwN1KP0EZk", Title = "Starcraft2" },
-                new VideoVBS() { Id = "ElwN1KP0EZk", Title = "Starcraft3" },
+                new VideoVBS() { Id = "ElwN1KP0EZk", Title = "'Starcraft2" },
+                new VideoVBS() { Id = "ElwN1KP0EZk", Title = "!Starcraft3" },
             };
 
             // Act
