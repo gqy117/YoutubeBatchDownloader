@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
@@ -37,9 +38,7 @@
         {
             foreach (var video in input)
             {
-                video.Title = ReplaceColon(video.Title);
-                video.Title = ReplaceExclamatoryMark(video.Title);
-                video.Title = ReplaceSingleQuotes(video.Title);
+                video.Title = Path.GetInvalidFileNameChars().Aggregate(video.Title, (current, c) => current.Replace(c.ToString(), string.Empty));
             }
             return input;
         }
