@@ -10,7 +10,7 @@
 
     public class RegexHelper
     {
-        public IList<TVideo> RemoveInvalidCharacters<TVideo>(IList<TVideo> input) where TVideo : Video
+        public IList<Video> RemoveInvalidCharacters(IList<Video> input)
         {
             foreach (var video in input)
             {
