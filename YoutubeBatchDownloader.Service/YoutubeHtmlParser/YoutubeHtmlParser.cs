@@ -22,8 +22,8 @@
         [InjectionMethod]
         public virtual void Init(RegexHelper regexHelper, TableParser tableParser)
         {
-            RegexHelper = regexHelper;
-            TableParser = tableParser;
+            this.RegexHelper = regexHelper;
+            this.TableParser = tableParser;
         }
         #endregion
 
@@ -31,16 +31,16 @@
         #region Convert
         public virtual string Convert(string youtubeHtmlString)
         {
-            var videoList = ConvertVideoList(youtubeHtmlString);
-            string vbsString = CurrentGenerator.Generate(videoList);
+            var videoList = this.ConvertVideoList(youtubeHtmlString);
+            string vbsString = this.CurrentGenerator.Generate(videoList);
 
             return vbsString;
         }
 
         public virtual string Convert(string youtubeHtmlString, int startPosition)
         {
-            var videoList = ConvertVideoList(youtubeHtmlString);
-            string vbsString = CurrentGenerator.Generate(videoList, startPosition);
+            var videoList = this.ConvertVideoList(youtubeHtmlString);
+            string vbsString = this.CurrentGenerator.Generate(videoList, startPosition);
 
             return vbsString;
         }
@@ -49,8 +49,8 @@
 
         protected IList<Video> ConvertVideoList(string youtubeHtml)
         {
-            var videoList = TableParser.ParseTable<TVideo>(youtubeHtml);
-            videoList = RegexHelper.RemoveInvalidCharacters(videoList);
+            var videoList = this.TableParser.ParseTable<TVideo>(youtubeHtml);
+            videoList = this.RegexHelper.RemoveInvalidCharacters(videoList);
 
             return videoList;
         }
