@@ -9,7 +9,7 @@
     using Microsoft.Practices.Unity;
     using YoutubeBatchDownloader.Model;
 
-    public class YoutubeHtmlParserStandard : YoutubeHtmlParser<VideoStandard>, IYoutubeHtmlParser
+    public class YoutubeHtmlParserStandard : YoutubeHtmlParser, IYoutubeHtmlParser
     {
         #region Properties
         public string SaveAsFileName
@@ -22,7 +22,15 @@
         [InjectionMethod]
         public void Init(StandardTxtGenerator standardTxtGenerator)
         {
-            CurrentGenerator = standardTxtGenerator;
+            this.CurrentGenerator = standardTxtGenerator;
+        }
+        #endregion
+
+        #region Methods
+
+        protected override Video CreateSingleVideo()
+        {
+            return new VideoStandard();
         }
         #endregion
     }

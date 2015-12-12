@@ -15,7 +15,7 @@ namespace YoutubeBatchDownloader.Test
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
-    public class YoutubeHtmlParserStandardTest : YoutubeHtmlParserTest<YoutubeHtmlParserStandard>
+    public class YoutubeHtmlParserStandardTest : YoutubeHtmlParserTest
     {
         #region Properties
         protected YoutubeHtmlParserStandard YoutubeHtmlParserStandard { get; set; }

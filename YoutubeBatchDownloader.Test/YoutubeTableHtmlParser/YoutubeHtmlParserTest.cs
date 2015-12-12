@@ -14,11 +14,11 @@ namespace YoutubeBatchDownloader.Test
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
-    public abstract class YoutubeHtmlParserTest<TYoutubeHtmlPaser> : TestBase
+    public abstract class YoutubeHtmlParserTest : TestBase
     {
         #region Properties
 
-        protected virtual TYoutubeHtmlPaser CurrentYoutubeHtmlPaser { get; set; }
+        protected virtual YoutubeHtmlParser CurrentYoutubeHtmlPaser { get; set; }
 
         #endregion
 

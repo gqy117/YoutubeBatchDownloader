@@ -20,7 +20,6 @@
         #region Properties
         protected IUnityContainer Container { get; set; }
         protected ThunderVBSGenerator ThunderVBSGenerator { get; set; }
-        protected TableParser TableParser { get; set; }
         protected ThunderVBSTemplate ThunderVBSTemplate { get; set; }
         protected FileReader FileReader { get; set; }
         protected string GenerateThunderVbsTestvbs { get; set; }
@@ -44,7 +43,6 @@
         protected virtual void ResolveClasses()
         {
             ThunderVBSGenerator = Container.Resolve<ThunderVBSGenerator>();
-            TableParser = Container.Resolve<TableParser>();
             ThunderVBSTemplate = Container.Resolve<ThunderVBSTemplate>();
             FileReader = Container.Resolve<FileReader>();
         }

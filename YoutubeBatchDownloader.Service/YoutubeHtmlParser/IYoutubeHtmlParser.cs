@@ -10,7 +10,9 @@
     public interface IYoutubeHtmlParser
     {
         string SaveAsFileName { get; }
+
         string Convert(string youtubeHtmlString);
+
         string Convert(string youtubeHtmlString, int startPosition);
     }
 }

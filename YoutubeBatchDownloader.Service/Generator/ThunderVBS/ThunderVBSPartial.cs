@@ -21,7 +21,7 @@
         public virtual string TransformText(IList<Video> listVideo)
         {
             this.ListVideo = listVideo;
-            SetFileNameWithPrefix();
+            this.SetFileNameWithPrefix();
 
             return this.TransformText();
         }
@@ -37,13 +37,13 @@
         {
             for (int i = 0; i < ListVideo.Count; i++)
             {
-                ListVideo[i].FileNameWithPrefix = GetFileName(ListVideo[i].FileName, i);
+                this.ListVideo[i].FileNameWithPrefix = GetFileName(ListVideo[i].FileName, i);
             }
         }
 
         private string GetFileName(string fileName, int i)
         {
-            string prefix = DoesAddPrefix ? (StartPosition + i).ToString("000") : String.Empty;
+            string prefix = this.DoesAddPrefix ? (this.StartPosition + i).ToString("000") : String.Empty;
 
             return prefix + fileName;
         }
