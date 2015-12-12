@@ -9,7 +9,7 @@
     using Microsoft.Practices.Unity;
     using YoutubeBatchDownloader.Model;
 
-    public class YoutubeHtmlParserVBS : YoutubeHtmlParser<VideoVBS>, IYoutubeHtmlParser
+    public class YoutubeHtmlParserVBS : YoutubeHtmlParser, IYoutubeHtmlParser
     {
         #region Properties
         public string SaveAsFileName

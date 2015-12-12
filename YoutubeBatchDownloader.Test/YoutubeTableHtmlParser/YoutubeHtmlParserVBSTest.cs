@@ -13,7 +13,7 @@
     using YoutubeBatchDownloader.Service;
 
     [TestClass]
-    public class YoutubeHtmlParserVBSTest : YoutubeHtmlParserTest<YoutubeHtmlParserVBS>
+    public class YoutubeHtmlParserVBSTest : YoutubeHtmlParserTest
     {
         protected YoutubeHtmlParserVBS YoutubeHtmlParserVBS { get; set; }
         #region Init

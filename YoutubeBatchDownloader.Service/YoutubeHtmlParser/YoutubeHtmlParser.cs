@@ -9,7 +9,7 @@
     using Microsoft.Practices.Unity;
     using YoutubeBatchDownloader.Model;
 
-    public abstract class YoutubeHtmlParser<TVideo> where TVideo : Video, new()
+    public abstract class YoutubeHtmlParser
     {
         #region Properties
 
@@ -49,7 +49,7 @@
 
         protected IList<Video> ConvertVideoList(string youtubeHtml)
         {
-            var videoList = this.TableParser.ParseTable<TVideo>(youtubeHtml);
+            var videoList = this.TableParser.ParseTable(youtubeHtml);
             videoList = this.RegexHelper.RemoveInvalidCharacters(videoList);
 
             return videoList;
