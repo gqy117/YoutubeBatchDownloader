@@ -14,16 +14,14 @@
         #region Properties
 
         protected RegexHelper RegexHelper { get; set; }
-        protected TableParser TableParser { get; set; }
         protected IGenerator CurrentGenerator { get; set; }
         #endregion
 
         #region Init
         [InjectionMethod]
-        public virtual void Init(RegexHelper regexHelper, TableParser tableParser)
+        public virtual void Init(RegexHelper regexHelper)
         {
             this.RegexHelper = regexHelper;
-            this.TableParser = tableParser;
         }
         #endregion
 
@@ -49,10 +47,50 @@
 
         protected IList<Video> ConvertVideoList(string youtubeHtml)
         {
-            var videoList = this.TableParser.ParseTable(youtubeHtml);
+            var videoList = this.ParseTable(youtubeHtml);
             videoList = this.RegexHelper.RemoveInvalidCharacters(videoList);
 
             return videoList;
+        }
+
+        private const string DataTitle = "data-title=\"([^\\\"]+)\"";
+        private const string DataVideo = "data-video-id=\"([^\"]+)\"";
+        private ISequence GroupPosition { get; set; }
+
+        protected IList<Video> ParseTable(string youtubeHtml)
+        {
+            string dataTitleFirst = String.Format("{0}(.*){1}", DataTitle, DataVideo);
+            string dataVideoFirst = String.Format("{0}(.*){1}", DataVideo, DataTitle);
+            string regexExpressionString = String.Format("{0}|{1}", dataTitleFirst, dataVideoFirst);
+
+            IList<Video> listVideo = new List<Video>();
+
+            foreach (Match match in Regex.Matches(youtubeHtml, regexExpressionString, RegexOptions.IgnoreCase))
+            {
+                SetGroupPosition(match.Groups);
+
+                var video = this.CreateSingleVideo();
+                video.Id = match.Groups[GroupPosition.IdGroupPosition].Value;
+                video.Title = match.Groups[GroupPosition.TitleGroupPosition].Value;
+
+                listVideo.Add(video);
+            }
+
+            return listVideo;
+        }
+
+        protected abstract Video CreateSingleVideo();
+
+        private void SetGroupPosition(GroupCollection groupCollection)
+        {
+            if (groupCollection[1].Length != 0)
+            {
+                GroupPosition = new TitleFirstSequence();
+            }
+            else
+            {
+                GroupPosition = new VideoFirstSequence();
+            }
         }
     }
 }

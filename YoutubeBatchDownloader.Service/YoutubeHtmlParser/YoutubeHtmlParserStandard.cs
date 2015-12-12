@@ -22,8 +22,17 @@
         [InjectionMethod]
         public void Init(StandardTxtGenerator standardTxtGenerator)
         {
-            CurrentGenerator = standardTxtGenerator;
+            this.CurrentGenerator = standardTxtGenerator;
         }
+        #endregion
+
+        #region Methods
+
+        protected override Video CreateSingleVideo()
+        {
+            return new VideoStandard();
+        }
+
         #endregion
     }
 }

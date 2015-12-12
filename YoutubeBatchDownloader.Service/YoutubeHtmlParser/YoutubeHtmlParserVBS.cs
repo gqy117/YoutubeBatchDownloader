@@ -25,5 +25,14 @@
             CurrentGenerator = thunderVBSGenerator;
         }
         #endregion
+
+        #region Methods
+
+        protected override Video CreateSingleVideo()
+        {
+            return new VideoVBS();
+        }
+
+        #endregion
     }
 }
