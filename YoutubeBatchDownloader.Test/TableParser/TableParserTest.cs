@@ -27,7 +27,7 @@
             string input = ParseTableTestHtml;
 
             // Act
-            IList<Video> actual = this.TableParser.ParseTable<VideoVBS>(input);
+            IList<Video> actual = this.TableParser.ParseTable(input);
 
             // Assert
             actual.ShouldBeEquivalentTo(expected);
