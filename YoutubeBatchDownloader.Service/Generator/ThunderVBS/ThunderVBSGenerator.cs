@@ -16,17 +16,17 @@
         [InjectionMethod]
         public void Init(ThunderVBSTemplate thunderVBSTemplate)
         {
-            ThunderVBSTemplate = thunderVBSTemplate;
+            this.ThunderVBSTemplate = thunderVBSTemplate;
         }
 
         public string Generate(IList<Video> input)
         {
-            return ThunderVBSTemplate.TransformText(input);
+            return this.ThunderVBSTemplate.TransformText(input);
         }
 
         public string Generate(IList<Video> input, int startPosition)
         {
-            return ThunderVBSTemplate.TransformText(input, startPosition);
+            return this.ThunderVBSTemplate.TransformText(input, startPosition);
         }
     }
 }

@@ -9,7 +9,9 @@
     public class HomeView
     {
         public int StartPosition { get; set; }
+
         public string YouTubeHtml { get; set; }
+
         public int ConvertMethod { get; set; }
     }
 }

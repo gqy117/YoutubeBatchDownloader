@@ -14,6 +14,7 @@
         #region Properties
 
         protected RegexHelper RegexHelper { get; set; }
+
         protected IGenerator CurrentGenerator { get; set; }
         #endregion
 
@@ -53,21 +54,25 @@
             return videoList;
         }
 
-        private const string DataTitle = "data-title=\"([^\\\"]+)\"";
-        private const string DataVideo = "data-video-id=\"([^\"]+)\"";
+        private const string DATATITLE = "data-title=\"([^\\\"]+)\"";
+
+        private const string DATAVIDEO = "data-video-id=\"([^\"]+)\"";
+
         private ISequence GroupPosition { get; set; }
+
+        protected abstract Video CreateSingleVideo();
 
         protected IList<Video> ParseTable(string youtubeHtml)
         {
-            string dataTitleFirst = String.Format("{0}(.*){1}", DataTitle, DataVideo);
-            string dataVideoFirst = String.Format("{0}(.*){1}", DataVideo, DataTitle);
+            string dataTitleFirst = String.Format("{0}(.*){1}", DATATITLE, DATAVIDEO);
+            string dataVideoFirst = String.Format("{0}(.*){1}", DATAVIDEO, DATATITLE);
             string regexExpressionString = String.Format("{0}|{1}", dataTitleFirst, dataVideoFirst);
 
             IList<Video> listVideo = new List<Video>();
 
             foreach (Match match in Regex.Matches(youtubeHtml, regexExpressionString, RegexOptions.IgnoreCase))
             {
-                SetGroupPosition(match.Groups);
+                this.SetGroupPosition(match.Groups);
 
                 var video = this.CreateSingleVideo();
                 video.Id = match.Groups[GroupPosition.IdGroupPosition].Value;
@@ -79,17 +84,15 @@
             return listVideo;
         }
 
-        protected abstract Video CreateSingleVideo();
-
         private void SetGroupPosition(GroupCollection groupCollection)
         {
             if (groupCollection[1].Length != 0)
             {
-                GroupPosition = new TitleFirstSequence();
+                this.GroupPosition = new TitleFirstSequence();
             }
             else
             {
-                GroupPosition = new VideoFirstSequence();
+                this.GroupPosition = new VideoFirstSequence();
             }
         }
     }
