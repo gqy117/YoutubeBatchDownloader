@@ -12,7 +12,7 @@
     {
         public string Generate(IList<Video> videoList)
         {
-            return Generate(videoList, default(int));
+            return this.Generate(videoList, default(int));
         }
 
         public string Generate(IList<Video> videoList, int startPosition)
