@@ -32,7 +32,6 @@
         {
             return new VideoStandard();
         }
-
         #endregion
     }
 }

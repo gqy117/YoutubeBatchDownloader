@@ -22,7 +22,7 @@
         [InjectionMethod]
         public void Init(ThunderVBSGenerator thunderVBSGenerator)
         {
-            CurrentGenerator = thunderVBSGenerator;
+            this.CurrentGenerator = thunderVBSGenerator;
         }
         #endregion
 

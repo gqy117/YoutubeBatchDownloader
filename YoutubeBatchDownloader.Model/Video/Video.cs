@@ -18,7 +18,9 @@
         #endregion
 
         public string Id { get; set; }
+
         public string Title { get; set; }
+
         public string DownloadUrl
         {
             get
@@ -34,6 +36,7 @@
                 return Title + DefaultExtension;
             }
         }
+
         public string FileNameWithPrefix { get; set; }
     }
 }

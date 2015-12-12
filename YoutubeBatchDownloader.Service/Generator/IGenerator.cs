@@ -10,6 +10,7 @@
     public interface IGenerator
     {
         string Generate(IList<Video> input);
+
         string Generate(IList<Video> input, int startPosition);
     }
 }

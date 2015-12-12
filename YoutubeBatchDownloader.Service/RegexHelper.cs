@@ -16,6 +16,7 @@
             {
                 video.Title = Path.GetInvalidFileNameChars().Aggregate(video.Title, (current, c) => current.Replace(c.ToString(), string.Empty));
             }
+
             return input;
         }
     }
