@@ -7,6 +7,7 @@
     using System.Text.RegularExpressions;
     using System.Threading.Tasks;
     using Microsoft.Practices.Unity;
+    using AngleSharp.Parser.Html;
     using CsQuery;
     using YoutubeBatchDownloader.Model;
 
@@ -65,15 +66,16 @@
         {
             IList<Video> listVideo = new List<Video>();
 
-            CQ cqYoutubeHtml = CQ.Create(youtubeHtml);
-            var allTrs = cqYoutubeHtml.Select("tr");
+            var dom = new HtmlParser().Parse(youtubeHtml);
+
+            var allTrs = dom.QuerySelectorAll("tr");
 
             foreach (var tr in allTrs)
             {
                 var video = this.CreateSingleVideo();
 
-                video.Id = tr.Attributes[YoutubeHtmlParser.DATAVIDEO];
-                video.Title = tr.Attributes[YoutubeHtmlParser.DATATITLE];
+                video.Id = tr.Attributes.GetNamedItem(YoutubeHtmlParser.DATAVIDEO).Value;
+                video.Title = tr.Attributes.GetNamedItem(YoutubeHtmlParser.DATATITLE).Value;
 
                 listVideo.Add(video);
             }
