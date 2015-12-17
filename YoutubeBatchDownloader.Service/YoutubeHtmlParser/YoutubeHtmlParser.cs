@@ -7,6 +7,7 @@
     using System.Text.RegularExpressions;
     using System.Threading.Tasks;
     using Microsoft.Practices.Unity;
+    using CsQuery;
     using YoutubeBatchDownloader.Model;
 
     public abstract class YoutubeHtmlParser
@@ -54,9 +55,9 @@
             return videoList;
         }
 
-        private const string DATATITLE = "data-title=\"([^\\\"]+)\"";
+        private const string DATATITLE = "data-title";
 
-        private const string DATAVIDEO = "data-video-id=\"([^\"]+)\"";
+        private const string DATAVIDEO = "data-video-id";
 
         private ISequence GroupPosition { get; set; }
 
@@ -64,36 +65,22 @@
 
         protected IList<Video> ParseTable(string youtubeHtml)
         {
-            string dataTitleFirst = String.Format("{0}(.*){1}", DATATITLE, DATAVIDEO);
-            string dataVideoFirst = String.Format("{0}(.*){1}", DATAVIDEO, DATATITLE);
-            string regexExpressionString = String.Format("{0}|{1}", dataTitleFirst, dataVideoFirst);
-
             IList<Video> listVideo = new List<Video>();
 
-            foreach (Match match in Regex.Matches(youtubeHtml, regexExpressionString, RegexOptions.IgnoreCase))
-            {
-                this.SetGroupPosition(match.Groups);
+            CQ cqYoutubeHtml = CQ.Create(youtubeHtml);
+            var allTrs = cqYoutubeHtml.Select("tr");
 
+            foreach (var tr in allTrs)
+            {
                 var video = this.CreateSingleVideo();
-                video.Id = match.Groups[GroupPosition.IdGroupPosition].Value;
-                video.Title = match.Groups[GroupPosition.TitleGroupPosition].Value;
+
+                video.Id = tr.Attributes[YoutubeHtmlParser.DATAVIDEO];
+                video.Title = tr.Attributes[YoutubeHtmlParser.DATATITLE];
 
                 listVideo.Add(video);
             }
 
             return listVideo;
-        }
-
-        private void SetGroupPosition(GroupCollection groupCollection)
-        {
-            if (groupCollection[1].Length != 0)
-            {
-                this.GroupPosition = new TitleFirstSequence();
-            }
-            else
-            {
-                this.GroupPosition = new VideoFirstSequence();
-            }
         }
     }
 }
