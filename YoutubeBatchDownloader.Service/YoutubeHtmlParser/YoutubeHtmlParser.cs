@@ -59,8 +59,6 @@
 
         private const string DATAVIDEO = "data-video-id";
 
-        private ISequence GroupPosition { get; set; }
-
         protected abstract Video CreateSingleVideo();
 
         protected IList<Video> ParseTable(string youtubeHtml)
