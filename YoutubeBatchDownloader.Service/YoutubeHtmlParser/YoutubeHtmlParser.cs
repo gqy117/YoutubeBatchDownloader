@@ -18,13 +18,16 @@
         protected RegexHelper RegexHelper { get; set; }
 
         protected IGenerator CurrentGenerator { get; set; }
+
+        protected HtmlParser HtmlParser { get; set; }
         #endregion
 
         #region Init
         [InjectionMethod]
-        public virtual void Init(RegexHelper regexHelper)
+        public virtual void Init(RegexHelper regexHelper, HtmlParser htmlParser)
         {
             this.RegexHelper = regexHelper;
+            this.HtmlParser = htmlParser;
         }
         #endregion
 
@@ -66,7 +69,7 @@
         {
             IList<Video> listVideo = new List<Video>();
 
-            var dom = new HtmlParser().Parse(youtubeHtml);
+            var dom = this.HtmlParser.Parse(youtubeHtml);
 
             var allTrs = dom.QuerySelectorAll("tr");
 
