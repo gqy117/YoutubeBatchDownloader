@@ -1,8 +1,4 @@
-﻿
-
-using Microsoft.Practices.Unity.Configuration;
-
-namespace Utility.UnityRegister
+﻿namespace Utility.UnityRegister
 {
     using System;
     using System.Collections.Generic;
@@ -10,6 +6,7 @@ namespace Utility.UnityRegister
     using System.Text;
     using Microsoft.Practices.Unity;
     using System.Configuration;
+    using AngleSharp.Parser.Html;
 
     public class UnityRegister
     {
@@ -23,6 +20,7 @@ namespace Utility.UnityRegister
         public static void RegisterTypes(IUnityContainer container)
         {
             var types = AllClasses.FromLoadedAssemblies().Where(t => ListRegisteredAssemblies.Contains(t.Namespace));
+            container.RegisterInstance(new HtmlParser());
 
             container.RegisterTypes(types);
         }
