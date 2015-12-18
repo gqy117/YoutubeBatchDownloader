@@ -20,7 +20,7 @@
         public static void RegisterTypes(IUnityContainer container)
         {
             var types = AllClasses.FromLoadedAssemblies().Where(t => ListRegisteredAssemblies.Contains(t.Namespace));
-            container.RegisterInstance("DefaultHtmlParser", new HtmlParser());
+            container.RegisterType<HtmlParser>(new InjectionConstructor());
 
             container.RegisterTypes(types);
         }
