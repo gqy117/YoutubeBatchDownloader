@@ -104,3 +104,10 @@ publish
 # Others
 ...
 WebSite/TestResults/
+packages/AngleSharp.0.9.3/lib/net40/AngleSharp.dll
+packages/AngleSharp.0.9.3/lib/net40/AngleSharp.xml
+packages/AngleSharp.0.9.3/lib/net45/AngleSharp.xml
+packages/AngleSharp.0.9.3/lib/portable-windows8+net45+windowsphone8+wpa/AngleSharp.dll
+packages/AngleSharp.0.9.3/lib/portable-windows8+net45+windowsphone8+wpa/AngleSharp.xml
+packages/AngleSharp.0.9.3/lib/sl50/AngleSharp.dll
+packages/AngleSharp.0.9.3/lib/sl50/AngleSharp.xml
