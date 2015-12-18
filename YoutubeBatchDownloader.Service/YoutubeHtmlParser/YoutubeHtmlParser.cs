@@ -24,10 +24,7 @@
 
         #region Init
         [InjectionMethod]
-        public virtual void Init(
-            RegexHelper regexHelper, 
-            [Dependency("DefaultHtmlParser")]
-            HtmlParser htmlParser)
+        public virtual void Init(RegexHelper regexHelper, HtmlParser htmlParser)
         {
             this.RegexHelper = regexHelper;
             this.HtmlParser = htmlParser;
