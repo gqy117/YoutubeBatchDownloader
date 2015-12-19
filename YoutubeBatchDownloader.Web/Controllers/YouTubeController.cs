@@ -37,7 +37,7 @@
         {
             YoutubeHtmlParser = IListYoutubeHtmlParser[homeView.ConvertMethod];
 
-            string vbsString = YoutubeHtmlParser.Convert(homeView.YouTubeHtml, homeView.StartPosition);
+            string vbsString = YoutubeHtmlParser.Convert(homeView.YouTubeHtml, homeView.StartIndex);
 
             return File(vbsString, YoutubeHtmlParser.SaveAsFileName);
         }

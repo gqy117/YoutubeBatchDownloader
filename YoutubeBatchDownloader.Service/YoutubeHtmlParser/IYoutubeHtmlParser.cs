@@ -13,6 +13,6 @@
 
         string Convert(string youtubeHtmlString);
 
-        string Convert(string youtubeHtmlString, int startPosition);
+        string Convert(string youtubeHtmlString, int startIndex);
     }
 }
