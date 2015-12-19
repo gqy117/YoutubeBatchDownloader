@@ -8,7 +8,7 @@
 
     public class HomeView
     {
-        public int StartPosition { get; set; }
+        public int StartIndex { get; set; }
 
         public string YouTubeHtml { get; set; }
 
