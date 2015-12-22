@@ -13,21 +13,16 @@
 
     public class YouTubeController : BaseController
     {
-        private YoutubeHtmlParserVBS YoutubeTableHtmlParserVBS { get; set; }
-        private YoutubeHtmlParserStandard YoutubeHtmlParserStandard { get; set; }
         private IYoutubeHtmlParser YoutubeHtmlParser { get; set; }
         private IList<IYoutubeHtmlParser> IListYoutubeHtmlParser { get; set; }
 
         [InjectionMethod]
         public void Init(YoutubeHtmlParserVBS youtubeHtmlParserVBS, YoutubeHtmlParserStandard youtubeHtmlParserStandard)
         {
-            YoutubeTableHtmlParserVBS = youtubeHtmlParserVBS;
-            YoutubeHtmlParserStandard = youtubeHtmlParserStandard;
-
             IListYoutubeHtmlParser = new List<IYoutubeHtmlParser>()
             {
-                YoutubeTableHtmlParserVBS,
-                YoutubeHtmlParserStandard
+                youtubeHtmlParserVBS,
+                youtubeHtmlParserStandard
             };
         }
 
