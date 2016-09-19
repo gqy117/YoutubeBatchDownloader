@@ -111,3 +111,7 @@ packages/AngleSharp.0.9.3/lib/portable-windows8+net45+windowsphone8+wpa/AngleSha
 packages/AngleSharp.0.9.3/lib/portable-windows8+net45+windowsphone8+wpa/AngleSharp.xml
 packages/AngleSharp.0.9.3/lib/sl50/AngleSharp.dll
 packages/AngleSharp.0.9.3/lib/sl50/AngleSharp.xml
+TestResults/
+.vs/config/applicationhost.config
+packages/
+!packages/repositories.config
