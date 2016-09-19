@@ -13,7 +13,6 @@
 
     public class ThunderVBSGenerator : IGenerator
     {
-        private const int StartPosition = 1;
         private StringTemplate ThunderVBSTemplate { get; set; }
 
         [InjectionMethod]
@@ -31,24 +30,24 @@
 
         public string Generate(IList<Video> input, int startPosition)
         {
-            SetFileNameWithPrefix(input);
+            SetFileNameWithPrefix(input, startPosition);
 
             this.ThunderVBSTemplate.SetAttribute("ListVideo", input);
 
             return this.ThunderVBSTemplate.ToString();
         }
 
-        private void SetFileNameWithPrefix(IList<Video> listVideo)
+        private void SetFileNameWithPrefix(IList<Video> listVideo, int startPosition)
         {
             for (int i = 0; i < listVideo.Count; i++)
             {
-                listVideo[i].FileNameWithPrefix = GetFileName(listVideo[i].FileName, i);
+                listVideo[i].FileNameWithPrefix = GetFileName(listVideo[i].FileName, i, startPosition);
             }
         }
 
-        private string GetFileName(string fileName, int i)
+        private string GetFileName(string fileName, int i, int startPosition)
         {
-            string prefix = (StartPosition + i).ToString("000");
+            string prefix = (startPosition + i).ToString("000");
 
             return prefix + fileName;
         }
