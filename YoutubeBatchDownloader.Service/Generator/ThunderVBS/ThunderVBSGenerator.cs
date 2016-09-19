@@ -9,14 +9,13 @@
     using Antlr3.ST;
     using Microsoft.Practices.Unity;
     using YoutubeBatchDownloader.Model;
-    using YoutubeBatchDownloader.Service.Generator.ThunderVBS;
 
     public class ThunderVBSGenerator : IGenerator
     {
         private StringTemplate ThunderVBSTemplate { get; set; }
 
         [InjectionMethod]
-        public void Init(ThunderVBSTemplate thunderVBSTemplate)
+        public void Init()
         {
             StringTemplateGroup templates = new StringTemplateGroup("ThunderVBS", @"Generator\ThunderVBS");
 
