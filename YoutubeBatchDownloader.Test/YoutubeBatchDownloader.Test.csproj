@@ -68,7 +68,6 @@
     <Compile Include="Generator\ThunderVBSGeneratorTest.cs" />
     <Compile Include="RegexHelperTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Generator\ThunderVBSPartialTest.cs" />
     <Compile Include="Utility\FileReaderTest.cs" />
     <Compile Include="YoutubeTableHtmlParser\YoutubeHtmlParserStandardTest.cs" />
     <Compile Include="YoutubeTableHtmlParser\YoutubeHtmlParserVBSTest.cs" />

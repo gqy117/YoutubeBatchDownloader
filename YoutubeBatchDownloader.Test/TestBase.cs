@@ -9,7 +9,6 @@
     using Microsoft.Practices.Unity;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using YoutubeBatchDownloader.Service;
-    using YoutubeBatchDownloader.Service.Generator.ThunderVBS;
     using Utility;
     using Utility.UnityRegister;
 
@@ -20,7 +19,6 @@
         #region Properties
         protected IUnityContainer Container { get; set; }
         protected ThunderVBSGenerator ThunderVBSGenerator { get; set; }
-        protected ThunderVBSTemplate ThunderVBSTemplate { get; set; }
         protected FileReader FileReader { get; set; }
         protected string GenerateThunderVbsTestvbs { get; set; }
         protected string GenerateThunderVbsTestvbsStartPosition2 { get; set; }
@@ -43,7 +41,6 @@
         protected virtual void ResolveClasses()
         {
             ThunderVBSGenerator = Container.Resolve<ThunderVBSGenerator>();
-            ThunderVBSTemplate = Container.Resolve<ThunderVBSTemplate>();
             FileReader = Container.Resolve<FileReader>();
         }
 
